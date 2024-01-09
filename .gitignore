@@ -13,3 +13,6 @@ venv/
 .vscode/
 db.sqlite3
 menu.html
+burger_blast/burger_blast/templates/base.html
+burger_blast/burger_blast/templates/footer.html
+burger_blast/burger_blast/templates/header.html
