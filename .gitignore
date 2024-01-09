@@ -12,3 +12,4 @@ env.py
 venv/
 .vscode/
 db.sqlite3
+menu.html
