@@ -1,0 +1,8 @@
+<h1>Meals List</h1>
+
+{% for meals in meal_list %}
+<ul>
+  {% for meal in meals %}
+  <li><a href="{% url 'meals:meal_detail' %}">{{meal}}</a></li>
+  {% endfor %} {% endfor %}
+</ul>
