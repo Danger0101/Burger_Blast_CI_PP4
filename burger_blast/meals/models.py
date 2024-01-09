@@ -18,6 +18,10 @@ class Meal(models.Model):
         if not sel.slug and self.name:
             self.slug = slugify(self.name)
         super(Meals, self).save(*args, **kwargs)
+        
+    class Meta:
+        verbose_name = 'Meal'
+        verbose_name_plural = 'Meals' 
 
     def __str__(self):
         return self.name
