@@ -32,3 +32,25 @@ def my_reservations(request):
         reservations = None  # Set reservations to None if no reservations found
 
     return render(request, 'reservation/my_reservations.html', {'reservations': reservations})
+
+
+@login_required
+def make_reservation(request):
+    if request.method == 'POST':
+        form = ReservationForm(request.POST, user=request.user)
+        if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+
+            # Combine date and time fields
+            reservation_datetime = datetime.combine(form.cleaned_data['reservation_date'], form.cleaned_data['reservation_time'])
+            # Make the datetime object timezone-aware
+            reservation_datetime = timezone.make_aware(reservation_datetime)
+            reservation.reservation_datetime = reservation_datetime
+
+            reservation.save()
+            return redirect('reservation:my_reservations')
+    else:
+        form = ReservationForm(user=request.user)
+
+    return render(request, 'reservation/make_reservation.html', {'form': form})
