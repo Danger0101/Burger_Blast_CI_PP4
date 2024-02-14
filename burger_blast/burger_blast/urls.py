@@ -18,11 +18,21 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from about.views import index_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('meals/', include(meals.urls, namespace='meals')),
+    path('', index_view, name='index'),
+    path('about/', include(('about.urls', 'about'), namespace='about')),
+    path('meals/', include(('meals.urls', 'meals'), namespace='meals')),
+    path('account/', include('django.contrib.auth.urls')),
+    path('account/', include(
+        ('authentication.urls', 'authentication'), namespace='account'
+    )),
+    path('reservation/', include(
+        ('reservation.urls', 'reservation'), namespace='reservation'
+    )),
 ]
 
-urlpatterns += static_url = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static_url = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
