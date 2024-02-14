@@ -1,1 +1,97 @@
-{% extends 'about/base.html' %} {% block content %} {% endblock %}
+{% extends 'about/base.html' %} {% block content %}
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2 class="card-title text-center">My Reservations</h2>
+    </div>
+    <div class="card-body">
+      <form class="mb-3" method="GET">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            name="q"
+            placeholder="Search reservations..."
+          />
+          <button class="btn btn-outline-secondary" type="submit">
+            Search
+          </button>
+        </div>
+      </form>
+      <div class="table-responsive">
+        {% for reservation in reservations %}
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="align-middle">Reservation</th>
+              <th class="align-middle">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Confirmation Number:</td>
+              <td>{{ reservation.confirmation_number }}</td>
+            </tr>
+            <tr>
+              <td>Reservation Date & Time:</td>
+              <td>
+                {{ reservation.reservation_datetime|date:"F j, Y, g:i a" }}
+              </td>
+            </tr>
+            <tr>
+              <td>Party Size:</td>
+              <td>{{ reservation.party_size }}</td>
+            </tr>
+            <tr>
+              <td>Special Requests:</td>
+              <td>{{ reservation.special_requests }}</td>
+            </tr>
+            {% if request.user.is_staff %}
+            <tr>
+              <td>User:</td>
+              <td>{{ reservation.user }}</td>
+            </tr>
+            <tr>
+              <td>First Name:</td>
+              <td>{{ reservation.first_name }}</td>
+            </tr>
+            <tr>
+              <td>Last Name:</td>
+              <td>{{ reservation.last_name }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+              <td>Actions:</td>
+              <td>
+                <a
+                  href="{% url 'reservation:delete_reservation' reservation.id %}"
+                  class="btn btn-danger btn-sm"
+                  >Delete</a
+                >
+                <a
+                  href="{% url 'reservation:edit_reservation' reservation.id %}"
+                  class="btn btn-primary btn-sm"
+                  >Edit</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Add a line break between each reservation -->
+        <hr />
+        {% endfor %}
+      </div>
+      {% if not reservations %}
+      <p class="text-center">No reservations found.</p>
+      {% endif %}
+      <div class="text-center">
+        <a
+          href="{% url 'reservation:make_reservation' %}"
+          class="btn btn-success"
+          >Make a Reservation</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
