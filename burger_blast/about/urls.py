@@ -21,5 +21,5 @@ from .views import index_view, about_view  # Import the about_view
 app_name = 'about'
 
 urlpatterns = [
-    
+    path('', index_view, name='index'),
 ]
