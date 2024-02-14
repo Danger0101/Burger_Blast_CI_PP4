@@ -1,1 +1,35 @@
-{% extends 'about/base.html' %} {% block content %} {% endblock %}
+{% extends 'about/base.html' %} {% block content %}
+<div class="container mt-5">
+  <h2 class="menu-title">Menu</h2>
+  <div class="row">
+    {% for meal in meals %}
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        {% if meal.image_url %}
+        <img
+          src="{{ meal.image_url }}"
+          class="card-img-top"
+          alt="{{ meal.name }}"
+        />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ meal.name }}</h5>
+          <p class="card-text">{{ meal.description }}</p>
+          <p class="card-text"><strong>Price:</strong> ${{ meal.price }}</p>
+          <p class="card-text">
+            <strong>Calories:</strong> {{ meal.calories }}
+          </p>
+          <p class="card-text">
+            <strong>Allergens:</strong> {{ meal.allergens }}
+          </p>
+          <p class="card-text">
+            <strong>Preparation Time:</strong> {{ meal.preparation_time }}
+            minutes
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
