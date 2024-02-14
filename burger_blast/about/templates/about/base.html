@@ -75,6 +75,14 @@
               <a class="nav-link" href="{% url 'meals:menu' %}">Menu</a>
             </li>
             {% if user.is_authenticated %}
+            <!-- Reservation Section for Logged-in Users -->
+            <li
+              class="nav-item {% if active_page == 'reservations' %}active{% endif %}"
+            >
+              <a class="nav-link" href="{% url 'reservation:my_reservations' %}"
+                >Reservations</a
+              >
+            </li>
             <!-- Other Authenticated Items... -->
             <li
               class="nav-item {% if active_page == 'logout' %}active{% endif %}"
