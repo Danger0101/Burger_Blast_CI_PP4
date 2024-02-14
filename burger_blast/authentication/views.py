@@ -68,3 +68,18 @@ def login_user(request):
 
     else:
         return render(request, "authentication/login.html", {})
+
+
+def logout_user(request):
+    """
+    Handle user logout.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Redirects to the index.
+    """
+    logout(request)
+    messages.success(request, "You have been logged out")
+    return redirect('about:index')
