@@ -1,0 +1,86 @@
+/* Import Montserrat for headers and links */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Import Open Sans for general content */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Import Quicksand for navigation links */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/* General CSS */
+body {
+        background-image: url("https://res.cloudinary.com/dcfn1wr8r/image/upload/v1705322786/burger-image_awbpuo.jpg");
+        background-size: cover;
+        background-position: right;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+        font-family: 'Montserrat', sans-serif;
+}
+
+.menu-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        color: #f2f2f2;
+        text-shadow: 2px 2px 2px #000000;
+        justify-content: center;
+        text-align: center;
+}
+
+/* Navbar CSS */
+.navbar {
+        background-color: #f2f2f2;
+        color: #262626;
+}
+
+.navbar-nav .nav-link {
+        color: black;
+        font-weight: normal;
+        transition: font-weight 0.3s;
+        font-family: 'Quicksand', sans-serif;
+}
+
+.navbar-nav .nav-link:hover {
+        font-weight: bold;
+}
+
+.navbar-nav .nav-link.active {
+        font-size: 1.2em;
+        font-weight: bold;
+}
+
+/* About Card CSS */
+.about-card {
+        opacity: 0.9;
+        color: #262626;
+        background-color: #f2f2f2cc;
+        border: 1px solid #000000;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/** Footer CSS **/
+.content {
+        flex: 1;
+        /* This pushes the footer to the bottom */
+}
+
+.footer {
+        background-color: #292929;
+        /* Set your desired background color */
+        color: #2f2f27;
+        /* Set your desired text color */
+        padding: 20px 0;
+        margin-top: auto;
+        /* This pushes the footer to the bottom */
+}
