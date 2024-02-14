@@ -69,6 +69,11 @@
             >
               <a class="nav-link" href="{% url 'about:about' %}">About Us</a>
             </li>
+            <li
+              class="nav-item {% if active_page == 'menu' %}active{% endif %}"
+            >
+              <a class="nav-link" href="{% url 'meals:menu' %}">Menu</a>
+            </li>
             {% if user.is_authenticated %}
             <!-- Other Authenticated Items... -->
             <li
