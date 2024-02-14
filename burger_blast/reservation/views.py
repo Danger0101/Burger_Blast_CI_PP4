@@ -77,3 +77,18 @@ def edit_reservation(request, reservation_id):
         form = ReservationForm(instance=reservation)
 
     return render(request, 'reservation/edit_reservation.html', {'form': form})
+
+@login_required
+def delete_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+
+    # Check if the logged-in user is a staff member
+    if not request.user.is_staff:
+        # If not a staff member, check if the reservation belongs to the current user
+        if reservation.user != request.user:
+            raise PermissionDenied("You don't have permission to delete this reservation.")
+
+    # Delete the reservation
+    reservation.delete()
+
+    return redirect('reservation:my_reservations')
