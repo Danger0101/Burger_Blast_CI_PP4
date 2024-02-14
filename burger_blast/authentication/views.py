@@ -83,3 +83,24 @@ def logout_user(request):
     logout(request)
     messages.success(request, "You have been logged out")
     return redirect('about:index')
+
+
+@login_required
+def update_user(request):
+    user_form = CustomUpdateUserForm(request.POST or None, instance=request.user)
+    password_form = ChangeUserPasswordForm(request.user, request.POST or None)
+
+    if request.method == 'POST':
+        if 'update_info' in request.POST and user_form.is_valid():
+            user_form.save()
+            messages.success(request, "User information updated successfully.")
+            return redirect('account:update')
+        elif 'change_password' in request.POST and password_form.is_valid():
+            password_form.save()
+            messages.success(request, "Password changed successfully.")
+            return redirect('account:update')
+
+    return render(request, 'authentication/update_user.html', {
+        'user_form': user_form,
+        'password_form': password_form
+    })
