@@ -33,3 +33,7 @@ def menu_view(request):
     context = {'active_page': 'menu'}
     meals = Meal.objects.all()
     return render(request, 'meals/menu.html', {'meals': meals})
+
+def meal_detail(request, slug):
+    meal = get_object_or_404(Meal, slug=slug)
+    return render(request, 'meals/meal_detail.html', {'meal': meal})
