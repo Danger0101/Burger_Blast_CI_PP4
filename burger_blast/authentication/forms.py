@@ -1,4 +1,8 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import (
+    UserCreationForm, 
+    UserChangeForm, 
+    PasswordChangeForm
+)
 from django.contrib.auth.models import User
 from django import forms
 
@@ -67,3 +71,21 @@ class CustomUpdateUserForm(UserChangeForm):
         super(CustomUpdateUserForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['class'] = 'form-control'
+
+
+class ChangeUserPasswordForm(PasswordChangeForm):
+    old_password = forms.CharField(
+        label="Old Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+    )
+    new_password1 = forms.CharField(
+        label="New Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+    )
+    new_password2 = forms.CharField(
+        label="Confirm New Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+    )
