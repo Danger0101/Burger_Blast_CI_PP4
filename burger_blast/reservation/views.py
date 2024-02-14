@@ -54,3 +54,26 @@ def make_reservation(request):
         form = ReservationForm(user=request.user)
 
     return render(request, 'reservation/make_reservation.html', {'form': form})
+
+@login_required
+def edit_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id)
+    if not request.user.is_staff:
+        # If not a staff member, check if the reservation belongs to the current user
+        if reservation.user != request.user:
+            raise PermissionDenied("You don't have permission to edit this reservation.")
+
+    if request.method == 'POST':
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            updated_reservation = form.save(commit=False)
+            reservation_datetime = datetime.combine(form.cleaned_data['reservation_date'], form.cleaned_data['reservation_time'])
+            # Make the datetime object timezone-aware
+            reservation_datetime = timezone.make_aware(reservation_datetime)
+            updated_reservation.reservation_datetime = reservation_datetime
+            updated_reservation.save()
+            return redirect('reservation:my_reservations')
+    else:
+        form = ReservationForm(instance=reservation)
+
+    return render(request, 'reservation/edit_reservation.html', {'form': form})
