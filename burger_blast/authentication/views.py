@@ -44,3 +44,27 @@ def register_user(request):
         return render(request, "authentication/register.html", {
             'form': form
         })
+
+def login_user(request):
+    """
+    Handle user login.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Redirects to the index
+    """
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('about:index')
+        else:
+            messages.error(request, "Invalid username or password")
+            return render(request, "authentication/login.html", {})
+
+    else:
+        return render(request, "authentication/login.html", {})
