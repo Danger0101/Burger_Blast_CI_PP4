@@ -28,3 +28,8 @@ def create_or_update_meal(request, meal_id=None):
 
     meal.save()
     return render(request, 'menu_edit.html', {'meal': meal})
+
+def menu_view(request):
+    context = {'active_page': 'menu'}
+    meals = Meal.objects.all()
+    return render(request, 'meals/menu.html', {'meals': meals})
