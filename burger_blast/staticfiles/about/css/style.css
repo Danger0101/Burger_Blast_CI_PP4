@@ -1,0 +1,153 @@
+/* Import Montserrat for headers and links */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Import Open Sans for general content */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Import Quicksand for navigation links */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/* General CSS */
+body {
+        background-image: url("https://res.cloudinary.com/dcfn1wr8r/image/upload/v1705322786/burger-image_awbpuo.jpg");
+        background-size: cover;
+        background-position: right;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+        font-family: 'Montserrat', sans-serif;
+}
+
+.menu-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        color: #f2f2f2;
+        text-shadow: 2px 2px 2px #000000;
+        justify-content: center;
+        text-align: center;
+}
+
+/* Navbar CSS */
+.navbar {
+        background-color: #f2f2f2e0;
+        color: #262626;
+        justify-content: space-between;
+}
+
+.navbar-nav .nav-link {
+        color: black;
+        font-weight: normal;
+        transition: font-weight 0.3s;
+        font-family: 'Quicksand', sans-serif;
+        padding: 0.5rem 1rem;
+        /* Adjust padding as needed */
+}
+
+.navbar-nav .nav-link:hover {
+        font-weight: bold;
+}
+
+.navbar-nav .nav-link.active {
+        font-size: 1.2em;
+        font-weight: bold;
+}
+
+.navbar .d-flex {
+        margin-right: 10px;
+}
+
+/* Additional style for Login link */
+.navbar-nav .nav-link.login-link {
+        margin-left: 0;
+}
+
+/* Card CSS */
+.about-card {
+        opacity: 0.9;
+        color: #262626;
+        background-color: #555353f7;
+        border: 1px solid #000000;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.authentication-card {
+        opacity: 0.9;
+        color: #141414;
+        background-color: #444444f8;
+        border: 1px solid #000000;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Table CSS */
+.table-bordered thead th,
+.table-bordered tbody td {
+        border: 1px solid #dee2e6;
+}
+
+/* Custom CSS for line break rows */
+.table-striped.table-bordered .line-break-row td {
+        border-top: none;
+        /* Remove top border */
+        border-bottom: 2px solid #dee2e6;
+        /* Add bottom border with increased thickness */
+        padding-top: 0.75rem;
+        /* Increase top padding */
+        padding-bottom: 0.75rem;
+        /* Increase bottom padding */
+        border-right: none;
+        /* Remove right border */
+        border-left: none;
+        /* Remove left border */
+}
+
+/* Custom CSS for line break rows on hover (optional) */
+.table-striped.table-bordered .line-break-row:hover td {
+        background-color: transparent;
+}
+
+
+/** Footer CSS **/
+.content {
+        flex: 1;
+}
+
+.footer {
+        background-color: #292929;
+        color: #ffffff;
+        padding: 20px 0;
+        margin-top: auto;
+}
+
+/* media query for smaller screens */
+@media screen and (max-width: 768px) {
+
+        /* Adjust field sizes */
+        input[type="text"],
+        textarea {
+                width: 100%;
+                /* adjust width as needed */
+        }
+
+        /* Adjust label styles */
+        label {
+                display: block;
+                margin-bottom: 5px;
+        }
+
+        /* Add scrolling to the form container */
+        .form-container {
+                overflow-y: auto;
+                max-height: 400px;
+        }
+}
