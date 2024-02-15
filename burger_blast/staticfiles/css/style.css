@@ -40,8 +40,9 @@ a {
 
 /* Navbar CSS */
 .navbar {
-        background-color: #f2f2f2;
+        background-color: #f2f2f2e0;
         color: #262626;
+        justify-content: space-between;
 }
 
 .navbar-nav .nav-link {
@@ -49,6 +50,8 @@ a {
         font-weight: normal;
         transition: font-weight 0.3s;
         font-family: 'Quicksand', sans-serif;
+        padding: 0.5rem 1rem;
+        /* Adjust padding as needed */
 }
 
 .navbar-nav .nav-link:hover {
@@ -60,27 +63,91 @@ a {
         font-weight: bold;
 }
 
-/* About Card CSS */
+.navbar .d-flex {
+        margin-right: 10px;
+}
+
+/* Additional style for Login link */
+.navbar-nav .nav-link.login-link {
+        margin-left: 0;
+}
+
+/* Card CSS */
 .about-card {
         opacity: 0.9;
         color: #262626;
-        background-color: #f2f2f2cc;
+        background-color: #555353f7;
         border: 1px solid #000000;
         box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+.authentication-card {
+        opacity: 0.9;
+        color: #141414;
+        background-color: #444444f8;
+        border: 1px solid #000000;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Table CSS */
+.table-bordered thead th,
+.table-bordered tbody td {
+        border: 1px solid #dee2e6;
+}
+
+/* Custom CSS for line break rows */
+.table-striped.table-bordered .line-break-row td {
+        border-top: none;
+        /* Remove top border */
+        border-bottom: 2px solid #dee2e6;
+        /* Add bottom border with increased thickness */
+        padding-top: 0.75rem;
+        /* Increase top padding */
+        padding-bottom: 0.75rem;
+        /* Increase bottom padding */
+        border-right: none;
+        /* Remove right border */
+        border-left: none;
+        /* Remove left border */
+}
+
+/* Custom CSS for line break rows on hover (optional) */
+.table-striped.table-bordered .line-break-row:hover td {
+        background-color: transparent;
+}
+
+
 /** Footer CSS **/
 .content {
         flex: 1;
-        /* This pushes the footer to the bottom */
 }
 
 .footer {
         background-color: #292929;
-        /* Set your desired background color */
-        color: #2f2f27;
-        /* Set your desired text color */
+        color: #ffffff;
         padding: 20px 0;
         margin-top: auto;
-        /* This pushes the footer to the bottom */
+}
+
+/* media query for smaller screens */
+@media screen and (max-width: 768px) {
+
+        /* Adjust field sizes */
+        input[type="text"],
+        textarea {
+                width: 100%;
+                /* adjust width as needed */
+        }
+
+        /* Adjust label styles */
+        label {
+                display: block;
+                margin-bottom: 5px;
+        }
+
+        /* Add scrolling to the form container */
+        .form-container {
+                overflow-y: auto;
+                max-height: 400px;
+        }
 }
