@@ -6,7 +6,6 @@ class Meal(models.Model):
     description = models.TextField(max_length=500)
     people = models.IntegerField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='meals/', null=True, blank=True)
     calories = models.IntegerField()
     allergens = models.CharField(max_length=55)
     preparation_time = models.IntegerField()
