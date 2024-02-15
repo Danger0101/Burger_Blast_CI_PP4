@@ -1,7 +1,18 @@
 from django.db import models
 
-
 class Meal(models.Model):
+    ENTREE = 'Entree'
+    SIDE_DISH = 'Side Dishes'
+    DESSERT = 'Desserts'
+
+    CATEGORY_CHOICES = [
+        (ENTREE, 'Entree'),
+        (SIDE_DISH, 'Side Dishes'),
+        (DESSERT, 'Desserts'),
+    ]
+
+    DEFAULT_CATEGORY = ENTREE
+
     name = models.CharField(max_length=55)
     description = models.TextField(max_length=500)
     people = models.IntegerField()
@@ -10,6 +21,11 @@ class Meal(models.Model):
     allergens = models.CharField(max_length=55)
     preparation_time = models.IntegerField()
     slug = models.SlugField(blank=True, null=True)
+    category = models.CharField(
+        max_length=20,
+        choices=CATEGORY_CHOICES,
+        default=DEFAULT_CATEGORY
+    )
 
     def __str__(self):
-        return str(self.name)
+        return self.name
