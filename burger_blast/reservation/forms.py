@@ -60,9 +60,6 @@ class ReservationForm(forms.ModelForm):
             self.fields['first_name'].initial = user.first_name
             self.fields['last_name'].initial = user.last_name
             self.fields['email'].initial = user.email
-            self.fields['first_name'].disabled = True
-            self.fields['last_name'].disabled = True
-            self.fields['email'].disabled = True
 
     class Media:
         '''
@@ -110,11 +107,9 @@ class ReservationForm(forms.ModelForm):
         # Get the current date and time in the project's timezone
         current_datetime = timezone.localtime(timezone.now())
 
-        # Ensure the reservation_date is in the future
         if reservation_date < current_datetime.date():
             return False
 
-        # Check if reservation_time is not None
         if reservation_time is None:
             return False
 
@@ -130,18 +125,16 @@ class ReservationForm(forms.ModelForm):
         reservation_datetime = timezone.make_aware(
             datetime.combine(reservation_date, reservation_time),
             timezone.get_current_timezone()
-        )  # Combine date and time
+        )
 
         if reservation_datetime <= current_datetime + timedelta(minutes=30):
             return False
         # Get the current date and time in the project's timezone
         current_datetime = timezone.localtime(timezone.now())
 
-        # Ensure the reservation_date is in the future
         if reservation_date < current_datetime.date():
             return False
 
-        # Check if reservation_time is not None
         if reservation_time is None:
             return False
 
