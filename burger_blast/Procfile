@@ -1,1 +1,1 @@
-web: gunicorn burger_blast.wsgi
+web: gunicorn burger_blast.wsgi:application
