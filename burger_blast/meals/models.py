@@ -1,6 +1,24 @@
+'''
+This module contains the model for a meal.
+'''
 from django.db import models
 
+
 class Meal(models.Model):
+    '''
+    Model for a meal.
+
+    Attributes:
+        name (str): The name of the meal.
+        description (str): A description of the meal.
+        people (int): The number of people the meal serves.
+        price (float): The price of the meal.
+        calories (int): The number of calories in the meal.
+        allergens (str): A list of allergens in the meal.
+        preparation_time (int): The time it takes to prepare the meal.
+        slug (str): The slug for the meal.
+        category (str): The category of the meal.
+    '''
     ENTREE = 'Entree'
     SIDE_DISH = 'Side Dishes'
     DESSERT = 'Desserts'
@@ -26,6 +44,3 @@ class Meal(models.Model):
         choices=CATEGORY_CHOICES,
         default=DEFAULT_CATEGORY
     )
-
-    def __str__(self):
-        return self.name
