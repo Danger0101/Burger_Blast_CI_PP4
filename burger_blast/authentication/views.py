@@ -1,3 +1,6 @@
+'''
+This module contains the views for the authentication app.
+'''
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import (
@@ -16,12 +19,6 @@ from .forms import (
 def register_user(request):
     """
     Handle user registration.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: Redirects to the index.
     """
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
@@ -45,15 +42,10 @@ def register_user(request):
             'form': form
         })
 
+
 def login_user(request):
     """
     Handle user login.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: Redirects to the index
     """
     if request.method == "POST":
         username = request.POST["username"]
@@ -73,12 +65,6 @@ def login_user(request):
 def logout_user(request):
     """
     Handle user logout.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: Redirects to the index.
     """
     logout(request)
     messages.success(request, "You have been logged out")
@@ -87,8 +73,17 @@ def logout_user(request):
 
 @login_required
 def update_user(request):
-    user_form = CustomUpdateUserForm(request.POST or None, instance=request.user)
-    password_form = ChangeUserPasswordForm(request.user, request.POST or None)
+    '''
+    Update user information and password.
+    '''
+    user_form = CustomUpdateUserForm(
+        request.POST or None,
+        instance=request.user
+    )
+    password_form = ChangeUserPasswordForm(
+        request.user,
+        request.POST or None
+    )
 
     if request.method == 'POST':
         if 'update_info' in request.POST and user_form.is_valid():
