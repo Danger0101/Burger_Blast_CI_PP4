@@ -1,35 +1,81 @@
-# burger_blast\reservation\forms.py
+'''
+Forms for the reservation app.
+'''
+from datetime import datetime, time, timedelta
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from datetime import datetime, time, timedelta
 from .models import Reservation
 
+
 class ReservationForm(forms.ModelForm):
-    reservation_date = forms.DateField(widget=forms.TextInput(attrs={'type': 'date'}))
-    reservation_time = forms.TimeField(widget=forms.Select(choices=[]))
+    '''
+    The ReservationForm class is used to
+    create a form for making a reservation.
+
+    Attributes:
+        reservation_date (DateField):
+            The date of the reservation.
+        reservation_time (TimeField):
+            The time of the reservation.
+        user (ForeignKey):
+            The user who made the reservation.
+        first_name (CharField):
+            The first name of the person making the reservation.
+        last_name (CharField):
+            The last name of the person making the reservation.
+        email (EmailField):
+            The email address of the person making the reservation.
+        party_size (PositiveIntegerField):
+            The number of people in the party.
+        phone_number (CharField):
+            The phone number of the person making the reservation.
+        special_requests (TextField):
+            Any special requests for the reservation.
+    '''
+    reservation_date = forms.DateField(
+        widget=forms.DateInput(attrs={'type': 'date'}))
+    reservation_time = forms.TimeField(
+        widget=forms.Select(choices=[]))
 
     class Meta:
+        '''
+        The Meta class is used to specify the model and fields for the form.
+        '''
         model = Reservation
-        fields = ['first_name', 'last_name', 'email', 'reservation_date', 'reservation_time', 'party_size', 'phone_number', 'special_requests']
+        fields = [
+            'first_name', 'last_name',
+            'email', 'reservation_date',
+            'reservation_time', 'party_size',
+            'phone_number', 'special_requests'
+        ]
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
-        # Generate choices for the time field with 15-minute intervals within operating hours
-        interval = 15
-        self.fields['reservation_date'].widget.attrs['onchange'] = 'update_time_choices()'
+        self.fields['reservation_date'].widget.attrs['onchange'] = (
+            'update_time_choices()'
+        )
         if user:
             self.fields['first_name'].initial = user.first_name
             self.fields['last_name'].initial = user.last_name
             self.fields['email'].initial = user.email
+            self.fields['first_name'].disabled = True
+            self.fields['last_name'].disabled = True
+            self.fields['email'].disabled = True
 
     class Media:
-        js = ('https://code.jquery.com/jquery-3.6.4.min.js', 'reservation_form.js',)
+        '''
+        Media class to add JavaScript files to the form.
+        '''
+        js = (
+            'https://code.jquery.com/jquery-3.6.4.min.js',
+            'reservation_form.js',
+        )
 
     def clean(self):
         cleaned_data = super().clean()
-        reservation_date = cleaned_data.get('reservation_date')  # Changed from reservation_datetime
+        reservation_date = cleaned_data.get('reservation_date')
         reservation_time = cleaned_data.get('reservation_time')
         party_size = cleaned_data.get('party_size')
 
@@ -42,10 +88,25 @@ class ReservationForm(forms.ModelForm):
         if party_size <= 0:
             raise ValidationError("Party size must be greater than zero.")
 
-        if not self.is_valid_reservation_date_time(reservation_date, reservation_time):  # Changed from reservation_datetime
+        if not self.is_valid_reservation_date_time(
+            reservation_date, reservation_time
+        ):
             raise ValidationError("Invalid reservation date and time.")
 
-    def is_valid_reservation_date_time(self, reservation_date, reservation_time):  # Changed from reservation_datetime
+    def is_valid_reservation_date_time(
+        self, reservation_date, reservation_time
+    ):
+        '''
+        Check if the reservation date and time are valid.
+
+        Args:
+            reservation_date (date): The date of the reservation.
+            reservation_time (time): The time of the reservation.
+
+        Returns:
+            bool: True if the reservation date and time are valid,
+                  False otherwise.
+        '''
         # Get the current date and time in the project's timezone
         current_datetime = timezone.localtime(timezone.now())
 
@@ -58,24 +119,56 @@ class ReservationForm(forms.ModelForm):
             return False
 
         # Get the operating hours of the restaurant
-        opening_time = time(10, 0)  # Assuming the restaurant opens at 10:00 AM
-        closing_time = time(22, 0)  # Assuming the restaurant closes at 10:00 PM
+        opening_time = time(10, 0)  # Restaurant opens at 10:00 AM
+        closing_time = time(22, 0)  # Restaurant closes at 10:00 PM
 
         # Check if the reservation_time falls within operating hours
         if not (opening_time <= reservation_time <= closing_time):
             return False
 
         # Make reservation_datetime timezone-aware with the project's timezone
-        reservation_datetime = timezone.make_aware(datetime.combine(reservation_date, reservation_time), timezone.get_current_timezone())  # Combine date and time
+        reservation_datetime = timezone.make_aware(
+            datetime.combine(reservation_date, reservation_time),
+            timezone.get_current_timezone()
+        )  # Combine date and time
 
-        # Check if the reservation_time is at least 30 minutes ahead from the current time
+        if reservation_datetime <= current_datetime + timedelta(minutes=30):
+            return False
+        # Get the current date and time in the project's timezone
+        current_datetime = timezone.localtime(timezone.now())
+
+        # Ensure the reservation_date is in the future
+        if reservation_date < current_datetime.date():
+            return False
+
+        # Check if reservation_time is not None
+        if reservation_time is None:
+            return False
+
+        # Get the operating hours of the restaurant
+        opening_time = time(10, 0)  # Restaurant opens at 10:00 AM
+        closing_time = time(22, 0)  # Restaurant closes at 10:00 PM
+
+        # Check if the reservation_time falls within operating hours
+        if not (opening_time <= reservation_time <= closing_time):
+            return False
+
+        # Make reservation_datetime timezone-aware with the project's timezone
+        reservation_datetime = timezone.make_aware(
+            datetime.combine(reservation_date, reservation_time),
+            timezone.get_current_timezone()
+        )
+
         if reservation_datetime <= current_datetime + timedelta(minutes=30):
             return False
 
         # Check if there are any conflicting reservations
-        existing_reservations = Reservation.objects.filter(reservation_datetime=reservation_datetime)
+        existing_reservations = Reservation.objects.filter(
+            reservation_datetime=reservation_datetime
+        )
         for existing_reservation in existing_reservations:
-            if existing_reservation.reservation_datetime == reservation_datetime:
+            if existing_reservation.reservation_datetime == \
+                    reservation_datetime:
                 return False
 
         # If all checks pass, return True
