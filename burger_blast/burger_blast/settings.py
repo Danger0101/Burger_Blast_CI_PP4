@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'crispy_forms',
     'meals',
     'about',
@@ -177,3 +178,8 @@ LOGOUT_REDIRECT_URL = 'index'
 
 # Crispy Forms template pack
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
