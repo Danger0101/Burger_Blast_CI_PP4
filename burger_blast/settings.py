@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 
 DJANGO_SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
