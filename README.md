@@ -96,7 +96,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - Links to Social Sites
 
-![Image of footer](./staticfiles/images/)
+![Image of footer](./staticfiles/images/feature_images/footer.png)
 
 ---
 
