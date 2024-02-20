@@ -16,10 +16,16 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from .env import DJANGO_SECRET_KEY, DATABASE_URL, CLOUDINARY_CONFIG
 
-# Cloudinary configuration
-cloudinary.config(**CLOUDINARY_CONFIG)
+
+DJANGO_SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+DATABASE_URL = os.environ.get('DATABASE_URL')
+CLOUDINARY_CONFIG = {
+    'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'api_key': os.environ.get('CLOUDINARY_API_KEY'),
+    'api_secret': os.environ.get('CLOUDINARY_API_SECRET')
+}
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'
 BASE_DIR = Path(__file__).resolve().parent.parent
