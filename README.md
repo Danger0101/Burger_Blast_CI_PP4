@@ -12,15 +12,17 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 ### Navbar
 
-![]()
+![Navbar](./staticfiles/images/feature_images/navbar_shown.jpg)
 
-- ***
+### Logo
+
+![Logo Image](./staticfiles/images/feature_images/logo_on_site.png)
 
 ### Index
 
 - The index page for Burger Blast provides users with essential information about the restaurant, such as its name, slogan, and opening hours. It welcomes visitors to the restaurant, highlighting its commitment to delivering delightful flavors and memorable experiences through its food and service. Users can quickly find the restaurant's operating hours, ensuring they know when they can visit. Additionally, the page encourages users to embark on a flavorful journey with Burger Blast, promising a satisfying dining experience that will leave them happy. Overall, the index page serves as a welcoming introduction to Burger Blast, enticing users to explore further and consider visiting the restaurant for a tasty adventure.
 
-![]()
+![Index Page](./staticfiles/images/feature_images/index_page.png)
 
 ---
 
@@ -28,7 +30,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - It provides users with an engaging overview of the restaurant's ethos, cuisine, and dining experience. Through vibrant language and enticing imagery, it aims to create an immersive experience for the user, inviting them to explore the restaurant's offerings and join its culinary journey. The page is structured into sections, each highlighting different aspects such as the restaurant's philosophy, menu offerings, commitment to quality, culinary expertise, customer service, community engagement, and the overall dining adventure awaiting the visitors. It serves to inform and entice potential customers, giving them a glimpse into what makes Burger Blast unique and why they should consider dining there.
 
-![]()
+![About Us Page](./staticfiles/images/feature_images/about_page.png)
 
 ---
 
@@ -36,7 +38,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - Allows Users to signup for an account using providing username, first name, last name, email, and password with a validation method provided by django.
 
-![]()
+![Signup Page](./staticfiles/images/feature_images/signup_page.png)
 
 ---
 
@@ -44,7 +46,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - Allows Users to sign into their accounts using username and password.
 
-![]()
+![Sign In Page](./staticfiles/images/feature_images/login_page.png)
 
 ---
 
@@ -52,7 +54,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - Alows users to change their account details or password.
 
-![]()
+![Change Details Page](./staticfiles/images/feature_images/change_details_page.png)
 
 ---
 
@@ -60,7 +62,9 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - The "My Reservations" page is where users can view all their bookings in one place. It displays essential details like confirmation number, reservation date and time, party size, and any special requests made during the booking process. Users can also perform actions such as deleting or editing their reservations. If there are no reservations found, a message indicating so will be shown. Additionally, users have the option to make a new reservation directly from this page. Overall, it's a convenient hub for managing and keeping track of reservations. Staff can view and edit all reservations as well sa see slightly more information like name and user.
 
-![]()
+![My Reservations Page](./staticfiles/images/feature_images/reservation_customer_page.png)
+
+![My Reservations Staff View Of Page](./staticfiles/images/feature_images/reservation_staff_page.png)
 
 ---
 
@@ -68,7 +72,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - The "Make Reservations" page is where you can easily reserve a spot or book a service. It's designed to be user-friendly, with a simple form for you to fill out. You'll find fields asking for necessary information, such as your name, contact details, and the specifics of what you're booking. Once you've filled out the form, just hit the "Submit Reservation" button, and your reservation will be confirmed. It's a convenient way to secure your spot without any hassle.
 
-![]()
+![Make Reservations Page](./staticfiles/images/feature_images/Make_reservation_page.png)
 
 ---
 
@@ -76,7 +80,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - The "Edit Reservations" page allows you to make changes to your existing reservations. If you need to update your booking details, such as the date, time, or any other specifics, you can do so easily on this page. It's designed to be user-friendly, similar to the reservation form, with a straightforward interface for you to modify your information. Once you've made the necessary edits, simply save your changes, and your reservation will be updated accordingly. It's a convenient way to ensure that your booking reflects any adjustments you need to make.
 
-![]()
+![Edit Reservation Page](./staticfiles/images/feature_images/edit_reservation_page.png)
 
 ---
 
@@ -84,16 +88,15 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - The menu page is a part of a website where you can explore the different food options available. It's designed to make it easy for you to find what you're looking for by organizing the menu into categories like sides, entrees, and desserts. Each category has its own section that you can navigate to by clicking on buttons. When you click on a category, it shows you all the items available in that category. Each item is displayed with a name, a description, price, calories, allergens, and preparation time. This layout helps you quickly browse through the menu and decide what you want to order based on your preferences.
 
-![]()
+![Menu Page](./staticfiles/images/feature_images/menu_page.png)
 
 ---
 
 ### footer
 
-- Provides contact information for Meaningful Careers
-- Has links to the relevant social media accounts
+- Links to Social Sites
 
-![Image of footer](assets/images/meaningfulcareersreadmeimg/footer.png)
+![Image of footer](./staticfiles/images/)
 
 ---
 
