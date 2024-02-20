@@ -365,13 +365,13 @@ Used Heroku to deploy the website. You can [Visit Live Site by clicking here](ht
 
 ## Credits
 
-** Images **
+**Images**
 
 ![websitebackground Actual Image](./staticfiles/images/background_burger_two.jpg)
 
-- [Website Background Image:](https://www.fotor.com/)
+- Website Background Image by [fotor:](https://www.fotor.com/)
 
-** More Credits **
+**More Credits**
 
 - My wife who’s been supper supportive of this change in career for me and just being out right amazing we will get her into this one way or another I am sure.
 
