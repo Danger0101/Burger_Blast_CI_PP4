@@ -181,15 +181,109 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Contrast checker Image]()
 
-### index.html
+### Index
 
 **Chrome lighthouse desktop**
 
-![Screencap index.html lighthouse desktop]()
+![Screencap index lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/Index_lh_desktop.png)
 
 **Chrome mobile lighthouse**
 
-![Screencap index.html lighthouse mobile]()
+![Screencap index lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/Index_lh_mobile.png)
+
+### About
+
+**Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/aboutus_lh_desktop.png)
+
+**Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/aboutus_lh_mobile.png)
+
+### Admin
+
+**Admin Login Chrome lighthouse desktop**
+
+![Screencap index.html lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_desktop.png)
+
+**Admin Login Chrome mobile lighthouse**
+
+![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_mobile.png)
+
+**Admin Pannel Chrome lighthouse desktop**
+
+![Screencap index.html lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_lh_desktop.png)
+
+**Admin Pannel Chrome mobile lighthouse**
+
+![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_lh_mobile.png)
+
+### Reservations
+
+**Edit Reservation Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_desktop.png)
+
+**Edit Reservation Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_mobile.png)
+
+**Make Reservation Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_desktop.png)
+
+**Make Reservation Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_mobile.png)
+
+**My Reservation Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_desktop.png)
+
+**My Reservation Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_mobile.png)
+
+### Menu
+
+**Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/menu_lh_desktop.png)
+
+**Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/menu_lh_mobile.png)
+
+### Signup
+
+**Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signup_lh_desktop.png)
+
+**Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signup_lh_mobile.png)
+
+### Sign In
+
+**Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signin_lh_desktop.png)
+
+**Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signin_lh_mobile.png)
+
+### Change Details
+
+**Chrome lighthouse desktop**
+
+![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/update_details_lh_desktop.png)
+
+**Chrome mobile lighthouse**
+
+![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/update_details_lh_mobile.png)
 
 ---
 
@@ -273,7 +367,11 @@ Used Heroku to deploy the website. You can [Visit Live Site by clicking here](ht
 
 ** Images **
 
+![websitebackground Actual Image](./staticfiles/images/background_burger_two.jpg)
+
 - [Website Background Image:](https://www.fotor.com/)
+
+** More Credits **
 
 - My wife who’s been supper supportive of this change in career for me and just being out right amazing we will get her into this one way or another I am sure.
 
