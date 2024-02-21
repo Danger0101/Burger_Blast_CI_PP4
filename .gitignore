@@ -13,3 +13,9 @@ venv/
 .vscode/
 db.sqlite3
 burger_blast.env
+test_remove_burger.py
+test_add_burger.py
+meal_detail.html
+menu_edit.html
+contact_us.html
+.env
