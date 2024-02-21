@@ -3,6 +3,8 @@ This module contains views for the reservation app.
 '''
 from datetime import datetime
 from django.core.exceptions import PermissionDenied
+from django.core.mail import send_mail
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
@@ -18,6 +20,7 @@ def my_reservations(request):
     '''
     if request.user.is_staff:
         query = request.GET.get('q')
+
         if query:
             reservations = Reservation.objects.filter(
                 Q(user__username__icontains=query) |
@@ -38,14 +41,18 @@ def my_reservations(request):
         )
 
     if not reservations:
-        reservations = None
+        no_reservations_message = "You have no reservations at the moment."
+        return render(
+            request,
+            'reservation/my_reservations.html',
+            {'no_reservations_message': no_reservations_message}
+        )
 
     return render(
         request,
         'reservation/my_reservations.html',
         {'reservations': reservations}
     )
-
 
 @login_required
 def make_reservation(request):
@@ -63,11 +70,16 @@ def make_reservation(request):
                 form.cleaned_data['reservation_date'],
                 form.cleaned_data['reservation_time']
             )
+
             # Make the datetime object timezone-aware
             reservation_datetime = timezone.make_aware(reservation_datetime)
             reservation.reservation_datetime = reservation_datetime
 
             reservation.save()
+
+            # Send reservation confirmation email
+            send_reservation_confirmation_email(reservation)
+
             return redirect('reservation:my_reservations')
     else:
         form = ReservationForm(user=request.user)
@@ -81,10 +93,10 @@ def edit_reservation(request, reservation_id):
     This view allows the user to edit a reservation.
     '''
     reservation = get_object_or_404(Reservation, id=reservation_id)
-    if not request.user.is_staff:
-        if reservation.user != request.user:
-            raise PermissionDenied("You don't have permission to edit this "
-                                   "reservation.")
+
+    # Check permission to edit reservation
+    if not request.user.is_staff and reservation.user != request.user:
+        raise PermissionDenied("You don't have permission to edit this reservation.")
 
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
@@ -94,10 +106,16 @@ def edit_reservation(request, reservation_id):
                 form.cleaned_data['reservation_date'],
                 form.cleaned_data['reservation_time']
             )
+
             # Make the datetime object timezone-aware
             reservation_datetime = timezone.make_aware(reservation_datetime)
             updated_reservation.reservation_datetime = reservation_datetime
+
             updated_reservation.save()
+
+            # Send reservation update confirmation email
+            send_reservation_update_confirmation_email(updated_reservation)
+
             return redirect('reservation:my_reservations')
     else:
         form = ReservationForm(instance=reservation)
@@ -112,13 +130,92 @@ def delete_reservation(request, reservation_id):
     '''
     reservation = get_object_or_404(Reservation, pk=reservation_id)
 
-    # Check if the logged-in user is a staff member
-    if not request.user.is_staff:
-        if reservation.user != request.user:
-            raise PermissionDenied("You don't have permission to delete this "
-                                   "reservation.")
+    # Check permission to delete reservation
+    if not request.user.is_staff and reservation.user != request.user:
+        raise PermissionDenied("You don't have permission to delete this reservation.")
+
+    # Save reservation details before deletion
+    deleted_reservation_details = {
+        'datetime': timezone.localtime(reservation.reservation_datetime),
+        'user': reservation.user,
+        'first_name': reservation.first_name,
+        'last_name': reservation.last_name,
+        'confirmation_number': reservation.confirmation_number
+    }
+
+    # Send email based on who is deleting the reservation
+    if request.user.is_staff:
+        send_cancel_email_to_user(deleted_reservation_details)
+    else:
+        send_confirmation_email_to_user(deleted_reservation_details)
 
     # Delete the reservation
     reservation.delete()
-
     return redirect('reservation:my_reservations')
+
+def send_reservation_confirmation_email(reservation):
+    '''
+    Send reservation confirmation email to user.
+    '''
+    subject = 'Reservation Confirmation'
+    message = f"Dear {reservation.first_name} {reservation.last_name},\n\n"
+    message += "We are pleased to confirm your reservation.\n\n"
+    message += f"Reservation Details:\n"
+    message += f"Date & Time: {reservation.reservation_datetime.strftime('%B %d, %Y, %I:%M %p')}\n"
+    message += f"Confirmation Number: {reservation.confirmation_number}\n\n"
+    message += f"Party Size: {reservation.party_size}\n"
+    message += f"Phone Number: {reservation.phone_number}\n"
+    message += f"Special Requests: {reservation.special_requests}\n\n"
+    message += "Thank you for choosing our restaurant.\n\n"
+    message += "Best regards,\nBurger Blast Team"
+
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [reservation.user.email])
+
+def send_reservation_update_confirmation_email(updated_reservation):
+    '''
+    Send reservation update confirmation email to user.
+    '''
+    subject = 'Reservation Update Confirmation'
+    message = f"Dear {updated_reservation.first_name} {updated_reservation.last_name},\n\n"
+    message += "We have successfully updated your reservation.\n\n"
+    message += f"Updated Reservation Details:\n"
+    message += f"Date & Time: {updated_reservation.reservation_datetime.strftime('%B %d, %Y, %I:%M %p')}\n"
+    message += f"Confirmation Number: {updated_reservation.confirmation_number}\n\n"
+    message += f"Party Size: {updated_reservation.party_size}\n"
+    message += f"Phone Number: {updated_reservation.phone_number}\n"
+    message += f"Special Requests: {updated_reservation.special_requests}\n\n"
+    message += "Thank you for choosing our restaurant.\n\n"
+    message += "Best regards,\nBurger Blast Team"
+
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [updated_reservation.user.email])
+
+def send_cancel_email_to_user(deleted_reservation_details):
+    '''
+    Send cancellation email to user (if staff member deletes reservation).
+    '''
+    subject = 'Reservation Cancellation'
+    message = f"Dear {deleted_reservation_details['first_name']} {deleted_reservation_details['last_name']},\n\n"
+    message += "We regret to inform you that due to unforeseen circumstances, your reservation has been cancelled. "
+    message += "Please reach out to us if you require further assistance or to make a new reservation.\n\n"
+    message += f"Reservation Details:\n"
+    message += f"Date & Time: {deleted_reservation_details['datetime'].strftime('%B %d, %Y, %I:%M %p')}\n"
+    message += f"Confirmation Number: {deleted_reservation_details['confirmation_number']}\n\n"
+    message += "Thank you for your understanding.\n\n"
+    message += "Sincerely,\nBurger Blast Team"
+
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [deleted_reservation_details['user'].email])
+
+def send_confirmation_email_to_user(deleted_reservation_details):
+    '''
+    Send confirmation email to user (if user deletes their own reservation).
+    '''
+    subject = 'Reservation Deletion Confirmation'
+    message = f"Dear {deleted_reservation_details['first_name']} {deleted_reservation_details['last_name']},\n\n"
+    message += "We would like to confirm that your reservation has been successfully cancelled.\n\n"
+    message += f"Reservation Details:\n"
+    message += f"Date & Time: {deleted_reservation_details['datetime'].strftime('%B %d, %Y, %I:%M %p')}\n"
+    message += f"Confirmation Number: {deleted_reservation_details['confirmation_number']}\n\n"
+    message += "If you have any questions or need further assistance, please don't hesitate to contact us.\n\n"
+    message += "Best regards,\nBurger Blast Team"
+
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [deleted_reservation_details['user'].email])
