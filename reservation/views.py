@@ -54,6 +54,7 @@ def my_reservations(request):
         {'reservations': reservations}
     )
 
+
 @login_required
 def make_reservation(request):
     '''
@@ -96,7 +97,8 @@ def edit_reservation(request, reservation_id):
 
     # Check permission to edit reservation
     if not request.user.is_staff and reservation.user != request.user:
-        raise PermissionDenied("You don't have permission to edit this reservation.")
+        raise PermissionDenied("You don't have permission to edit "
+                               "this reservation.")
 
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
@@ -132,7 +134,8 @@ def delete_reservation(request, reservation_id):
 
     # Check permission to delete reservation
     if not request.user.is_staff and reservation.user != request.user:
-        raise PermissionDenied("You don't have permission to delete this reservation.")
+        raise PermissionDenied("You don't have permission to delete "
+                               "this reservation.")
 
     # Save reservation details before deletion
     deleted_reservation_details = {
@@ -153,68 +156,74 @@ def delete_reservation(request, reservation_id):
     reservation.delete()
     return redirect('reservation:my_reservations')
 
+
 def send_reservation_confirmation_email(reservation):
     '''
     Send reservation confirmation email to user.
     '''
     subject = 'Reservation Confirmation'
-    message = f"Dear {reservation.first_name} {reservation.last_name},\n\n"
-    message += "We are pleased to confirm your reservation.\n\n"
-    message += f"Reservation Details:\n"
-    message += f"Date & Time: {reservation.reservation_datetime.strftime('%B %d, %Y, %I:%M %p')}\n"
-    message += f"Confirmation Number: {reservation.confirmation_number}\n\n"
-    message += f"Party Size: {reservation.party_size}\n"
-    message += f"Phone Number: {reservation.phone_number}\n"
-    message += f"Special Requests: {reservation.special_requests}\n\n"
+    message = "Dear " + reservation.first_name + " " + reservation.last_name + ",\n\n"
+    message += "We have successfully received your reservation.\n\n"
+    message += "Reservation Details:\n"
+    message += "Date & Time: " + reservation.reservation_datetime.strftime('%B %d, %Y,') + "\n"
+    message += "Party Size: " + str(reservation.party_size) + "\n"
+    message += "Confirmation Number: " + reservation.confirmation_number + "\n\n"
+    message += "Phone Number: " + reservation.phone_number + "\n"
+    message += "Special Requests: " + reservation.special_requests + "\n\n"
     message += "Thank you for choosing our restaurant.\n\n"
     message += "Best regards,\nBurger Blast Team"
-
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [reservation.user.email])
+
 
 def send_reservation_update_confirmation_email(updated_reservation):
     '''
     Send reservation update confirmation email to user.
     '''
     subject = 'Reservation Update Confirmation'
-    message = f"Dear {updated_reservation.first_name} {updated_reservation.last_name},\n\n"
+    message = "Dear " + updated_reservation.first_name + " " + updated_reservation.last_name + ",\n\n"
     message += "We have successfully updated your reservation.\n\n"
-    message += f"Updated Reservation Details:\n"
-    message += f"Date & Time: {updated_reservation.reservation_datetime.strftime('%B %d, %Y, %I:%M %p')}\n"
-    message += f"Confirmation Number: {updated_reservation.confirmation_number}\n\n"
-    message += f"Party Size: {updated_reservation.party_size}\n"
-    message += f"Phone Number: {updated_reservation.phone_number}\n"
-    message += f"Special Requests: {updated_reservation.special_requests}\n\n"
+    message += "Updated Reservation Details:\n"
+    message += "Date & Time: " + updated_reservation.reservation_datetime.strftime('%B %d, %Y,') + "\n"
+    message += "Confirmation Number: " + updated_reservation.confirmation_number + "\n\n"
+    message += "Party Size: " + str(updated_reservation.party_size) + "\n"
+    message += "Phone Number: " + updated_reservation.phone_number + "\n"
+    message += "Special Requests: " + updated_reservation.special_requests + "\n\n"
     message += "Thank you for choosing our restaurant.\n\n"
     message += "Best regards,\nBurger Blast Team"
 
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [updated_reservation.user.email])
+
 
 def send_cancel_email_to_user(deleted_reservation_details):
     '''
     Send cancellation email to user (if staff member deletes reservation).
     '''
     subject = 'Reservation Cancellation'
-    message = f"Dear {deleted_reservation_details['first_name']} {deleted_reservation_details['last_name']},\n\n"
-    message += "We regret to inform you that due to unforeseen circumstances, your reservation has been cancelled. "
+    message = (
+        f"Dear {deleted_reservation_details['first_name']} "
+        f"{deleted_reservation_details['last_name']},\n\n"
+    )
+    message += "We regret to inform you that due to unforeseen circumstances, your reservation has been cancelled."
     message += "Please reach out to us if you require further assistance or to make a new reservation.\n\n"
-    message += f"Reservation Details:\n"
-    message += f"Date & Time: {deleted_reservation_details['datetime'].strftime('%B %d, %Y, %I:%M %p')}\n"
-    message += f"Confirmation Number: {deleted_reservation_details['confirmation_number']}\n\n"
+    message += "Reservation Details:\n"
+    message += "Date & Time: " + deleted_reservation_details['datetime'].strftime('%B %d, %Y, %I:%M %p') + "\n"
+    message += "Confirmation Number: " + deleted_reservation_details['confirmation_number'] + "\n\n"
     message += "Thank you for your understanding.\n\n"
     message += "Sincerely,\nBurger Blast Team"
 
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [deleted_reservation_details['user'].email])
+
 
 def send_confirmation_email_to_user(deleted_reservation_details):
     '''
     Send confirmation email to user (if user deletes their own reservation).
     '''
     subject = 'Reservation Deletion Confirmation'
-    message = f"Dear {deleted_reservation_details['first_name']} {deleted_reservation_details['last_name']},\n\n"
+    message = "Dear " + deleted_reservation_details['first_name'] + " " + deleted_reservation_details['last_name'] + ",\n\n"
     message += "We would like to confirm that your reservation has been successfully cancelled.\n\n"
-    message += f"Reservation Details:\n"
-    message += f"Date & Time: {deleted_reservation_details['datetime'].strftime('%B %d, %Y, %I:%M %p')}\n"
-    message += f"Confirmation Number: {deleted_reservation_details['confirmation_number']}\n\n"
+    message += "Reservation Details:\n"
+    message += "Date & Time: " + deleted_reservation_details['datetime'].strftime('%B %d, %Y,') + "\n" "Time: " + deleted_reservation_details['datetime'].strftime('%I:%M %p') + "\n"
+    message += "Confirmation Number: " + deleted_reservation_details['confirmation_number'] + "\n\n"
     message += "If you have any questions or need further assistance, please don't hesitate to contact us.\n\n"
     message += "Best regards,\nBurger Blast Team"
 
