@@ -1,6 +1,10 @@
+'''
+This file contains the forms for the authentication app. The forms are used to
+create and update user accounts, and to change user passwords.
+'''
 from django.contrib.auth.forms import (
-    UserCreationForm, 
-    UserChangeForm, 
+    UserCreationForm,
+    UserChangeForm,
     PasswordChangeForm
 )
 from django.contrib.auth.models import User
@@ -8,6 +12,17 @@ from django import forms
 
 
 class RegisterUserForm(UserCreationForm):
+    '''
+    The RegisterUserForm class is used to create a form for user registration.
+
+    Attributes:
+        email (EmailField):
+            The email address of the user.
+        first_name (CharField):
+            The first name of the user.
+        last_name (CharField):
+            The last name of the user.
+    '''
     email = forms.EmailField(
         required=True,
         widget=forms.EmailInput(
@@ -39,6 +54,9 @@ class RegisterUserForm(UserCreationForm):
     )
 
     class Meta:
+        '''
+        The Meta class is used to specify the model and fields for the form.
+        '''
         model = User
         fields = (
             "username", "first_name", "last_name", "email",
@@ -52,7 +70,16 @@ class RegisterUserForm(UserCreationForm):
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
+
 class CustomUpdateUserForm(UserChangeForm):
+    '''
+    The CustomUpdateUserForm class is used to create a form for updating user
+    information.
+
+    Attributes:
+        email (EmailField):
+            The email address of the user.
+    '''
     email = forms.EmailField(
         required=True,
         widget=forms.EmailInput(
@@ -64,6 +91,9 @@ class CustomUpdateUserForm(UserChangeForm):
     )
 
     class Meta:
+        '''
+        The Meta class is used to specify the model and fields for the form.
+        '''
         model = User
         fields = ('username', 'email')
 
@@ -74,6 +104,18 @@ class CustomUpdateUserForm(UserChangeForm):
 
 
 class ChangeUserPasswordForm(PasswordChangeForm):
+    '''
+    The ChangeUserPasswordForm class is used to create a form for changing user
+    passwords.
+
+    Attributes:
+        old_password (CharField):
+            The user's old password.
+        new_password1 (CharField):
+            The user's new password.
+        new_password2 (CharField):
+            The user's new password confirmation.
+    '''
     old_password = forms.CharField(
         label="Old Password",
         strip=False,
