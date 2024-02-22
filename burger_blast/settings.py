@@ -43,7 +43,11 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', 'burger-blast-ci-2024-63403f4a3896.herokuapp.com/']
+ALLOWED_HOSTS = [
+    '.herokuapp.com',
+    'localhost', '127.0.0.1',
+    'burger-blast-ci-2024-63403f4a3896.herokuapp.com/'
+]
 
 
 # Application definition
