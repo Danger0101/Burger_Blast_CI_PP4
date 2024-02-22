@@ -1,6 +1,10 @@
+'''
+This module contains the views for the meals app.
+'''
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, get_object_or_404
 from .models import Meal
+
 
 def is_superuser(user):
     '''
@@ -13,6 +17,7 @@ def is_superuser(user):
         bool: True if the user is a superuser, False otherwise.
     '''
     return user.is_superuser
+
 
 @user_passes_test(is_superuser)
 def create_or_update_meal(request, meal_id=None):
@@ -46,6 +51,7 @@ def create_or_update_meal(request, meal_id=None):
     else:
         return render(request, 'menu_edit.html', {'meal': meal})
 
+
 def menu_view(request):
     '''
     Display the menu.
@@ -59,6 +65,7 @@ def menu_view(request):
     context = {'active_page': 'menu'}
     meals = Meal.objects.all()
     return render(request, 'meals/menu.html', {'meals': meals})
+
 
 def meal_detail(request, slug):
     '''
