@@ -42,7 +42,7 @@ def my_reservations(request):
         )
 
     # Pagination
-    paginator = Paginator(reservations, 10)  # Show 10 reservations per page
+    paginator = Paginator(reservations, 5)
     page = request.GET.get('page')
     try:
         reservations = paginator.page(page)
