@@ -84,6 +84,43 @@
       {% if not reservations %}
       <p class="text-center">No reservations found.</p>
       {% endif %}
+      <!-- Pagination links -->
+      <div class="d-flex justify-content-center">
+        <ul class="pagination">
+          {% if reservations.has_previous %}
+          <li class="page-item">
+            <a href="?page=1" class="page-link">&laquo;</a>
+          </li>
+          <li class="page-item">
+            <a
+              href="?page={{ reservations.previous_page_number }}"
+              class="page-link"
+              >{{ reservations.previous_page_number }}</a
+            >
+          </li>
+          {% endif %}
+          <li class="page-item active">
+            <a href="#" class="page-link">{{ reservations.number }}</a>
+          </li>
+          {% if reservations.has_next %}
+          <li class="page-item">
+            <a
+              href="?page={{ reservations.next_page_number }}"
+              class="page-link"
+              >{{ reservations.next_page_number }}</a
+            >
+          </li>
+          <li class="page-item">
+            <a
+              href="?page={{ reservations.paginator.num_pages }}"
+              class="page-link"
+              >&raquo;</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <!-- End Pagination links -->
       <div class="text-center">
         <a
           href="{% url 'reservation:make_reservation' %}"

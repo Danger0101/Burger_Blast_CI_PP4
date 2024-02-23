@@ -2,6 +2,7 @@
 This module contains views for the reservation app.
 '''
 from datetime import datetime
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import PermissionDenied
 from django.core.mail import send_mail
 from django.conf import settings
@@ -39,6 +40,18 @@ def my_reservations(request):
         reservation.reservation_datetime = timezone.localtime(
             reservation.reservation_datetime
         )
+
+    # Pagination
+    paginator = Paginator(reservations, 10)  # Show 10 reservations per page
+    page = request.GET.get('page')
+    try:
+        reservations = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        reservations = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        reservations = paginator.page(paginator.num_pages)
 
     if not reservations:
         no_reservations_message = "You have no reservations at the moment."
