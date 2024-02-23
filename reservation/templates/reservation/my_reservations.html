@@ -1,4 +1,5 @@
-{% extends 'about/base.html' %} {% block content %}
+{% extends 'about/base.html' %}
+{% block content %}
 <div class="container">
   <div class="col-lg-8 col-md-8 col-12 offset-lg-2 offset-md-2">
     <div class="card my-reservation-card mb-4">
@@ -23,113 +24,91 @@
         </form>
         <div class="table-responsive">
           {% for reservation in reservations %}
-          <table class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th class="reservation-sub-title align-middle">Reservation</th>
-                <th class="reservation-sub-title align-middle">Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="reservation-cat-title">Confirmation Number:</td>
-                <td>{{ reservation.confirmation_number }}</td>
-              </tr>
-              <tr>
-                <td class="reservation-cat-title">Reservation Date & Time:</td>
-                <td>
-                  {{ reservation.reservation_datetime|date:"F j, Y, g:i a" }}
-                </td>
-              </tr>
-              <tr>
-                <td class="reservation-cat-title">Party Size:</td>
-                <td>{{ reservation.party_size }}</td>
-              </tr>
-              <tr>
-                <td class="reservation-cat-title">Special Requests:</td>
-                <td>{{ reservation.special_requests }}</td>
-              </tr>
-              {% if request.user.is_staff %}
-              <tr>
-                <td class="reservation-cat-title">User:</td>
-                <td>{{ reservation.user }}</td>
-              </tr>
-              <tr>
-                <td class="reservation-cat-title">First Name:</td>
-                <td>{{ reservation.first_name }}</td>
-              </tr>
-              <tr>
-                <td class="reservation-cat-title">Last Name:</td>
-                <td>{{ reservation.last_name }}</td>
-              </tr>
-              {% endif %}
-              <tr>
-                <td class="reservation-cat-title">Actions:</td>
-                <td>
-                  <a
-                    href="{% url 'reservation:delete_reservation' reservation.id %}"
-                    class="btn btn-danger btn-sm action-btns"
-                    >Delete</a
-                  >
-                  <a
-                    href="{% url 'reservation:edit_reservation' reservation.id %}"
-                    class="btn btn-primary btn-sm action-btns"
-                    >Edit</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Add a line break between each reservation -->
-          <hr />
+            {% if reservation.reservation_datetime > now %}
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th class="reservation-sub-title align-middle">Reservation</th>
+                    <th class="reservation-sub-title align-middle">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="reservation-cat-title">Confirmation Number:</td>
+                    <td>{{ reservation.confirmation_number }}</td>
+                  </tr>
+                  <tr>
+                    <td class="reservation-cat-title">Reservation Date & Time:</td>
+                    <td>
+                      {{ reservation.reservation_datetime|date:"F j, Y, g:i a" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="reservation-cat-title">Party Size:</td>
+                    <td>{{ reservation.party_size }}</td>
+                  </tr>
+                  <tr>
+                    <td class="reservation-cat-title">Special Requests:</td>
+                    <td>{{ reservation.special_requests }}</td>
+                  </tr>
+                  {% if request.user.is_staff %}
+                    <tr>
+                      <td class="reservation-cat-title">User:</td>
+                      <td>{{ reservation.user }}</td>
+                    </tr>
+                    <tr>
+                      <td class="reservation-cat-title">First Name:</td>
+                      <td>{{ reservation.first_name }}</td>
+                    </tr>
+                    <tr>
+                      <td class="reservation-cat-title">Last Name:</td>
+                      <td>{{ reservation.last_name }}</td>
+                    </tr>
+                  {% endif %}
+                  <tr>
+                    <td class="reservation-cat-title">Actions:</td>
+                    <td>
+                      <a href="{% url 'reservation:delete_reservation' reservation.id %}" class="btn btn-danger btn-sm action-btns">Delete</a>
+                      <a href="{% url 'reservation:edit_reservation' reservation.id %}" class="btn btn-primary btn-sm action-btns">Edit</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Add a line break between each reservation -->
+              <hr />
+            {% endif %}
           {% endfor %}
         </div>
         {% if not reservations %}
-        <p class="text-center">No reservations found.</p>
+          <p class="text-center">No reservations found.</p>
         {% endif %}
         <!-- Pagination links -->
         <div class="d-flex justify-content-center">
           <ul class="pagination">
             {% if reservations.has_previous %}
-            <li class="page-item">
-              <a href="?page=1" class="page-link">&laquo;</a>
-            </li>
-            <li class="page-item">
-              <a
-                href="?page={{ reservations.previous_page_number }}"
-                class="page-link"
-                >{{ reservations.previous_page_number }}</a
-              >
-            </li>
+              <li class="page-item">
+                <a href="?page=1" class="page-link">&laquo;</a>
+              </li>
+              <li class="page-item">
+                <a href="?page={{ reservations.previous_page_number }}" class="page-link">{{ reservations.previous_page_number }}</a>
+              </li>
             {% endif %}
             <li class="page-item active">
               <a href="#" class="page-link">{{ reservations.number }}</a>
             </li>
             {% if reservations.has_next %}
-            <li class="page-item">
-              <a
-                href="?page={{ reservations.next_page_number }}"
-                class="page-link"
-                >{{ reservations.next_page_number }}</a
-              >
-            </li>
-            <li class="page-item">
-              <a
-                href="?page={{ reservations.paginator.num_pages }}"
-                class="page-link"
-                >&raquo;</a
-              >
-            </li>
+              <li class="page-item">
+                <a href="?page={{ reservations.next_page_number }}" class="page-link">{{ reservations.next_page_number }}</a>
+              </li>
+              <li class="page-item">
+                <a href="?page={{ reservations.paginator.num_pages }}" class="page-link">&raquo;</a>
+              </li>
             {% endif %}
           </ul>
         </div>
         <!-- End Pagination links -->
         <div class="text-center">
-          <a
-            href="{% url 'reservation:make_reservation' %}"
-            class="btn btn-success"
-            >Make a Reservation</a
-          >
+          <a href="{% url 'reservation:make_reservation' %}" class="btn btn-success">Make a Reservation</a>
         </div>
       </div>
     </div>
