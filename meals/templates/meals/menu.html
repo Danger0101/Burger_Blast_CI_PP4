@@ -125,17 +125,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  function showCategory(category) {
-    var categories = document.querySelectorAll(".menu-category");
-    categories.forEach(function (cat) {
-      if (cat.id === category) {
-        cat.style.display = "block";
-      } else {
-        cat.style.display = "none";
-      }
-    });
-  }
-</script>
+{% load static %}
+<script src="{% static 'meals/js/meals.js' %}"></script>
 {% endblock %}
