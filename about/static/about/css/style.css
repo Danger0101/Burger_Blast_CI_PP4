@@ -27,6 +27,35 @@ h6,
 a {
         font-family: 'Montserrat', sans-serif;
 }
+
+/* Index CSS */
+.hours {
+        text-align: center;
+}
+
+.hours-list {
+        list-style-type: none;
+        padding: 0;
+}
+
+.hours-list li {
+        margin-bottom: 10px;
+}
+
+.hours-list li strong::after {
+        content: "";
+}
+
+.address,
+.contact-info {
+        text-align: center;
+}
+
+.address p,
+.contact-info p {
+        margin-bottom: 5px;
+}
+
 /* Menu CSS */
 .menu-title {
         font-family: 'Montserrat', sans-serif;
