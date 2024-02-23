@@ -74,6 +74,13 @@
             >
               <a class="nav-link" href="{% url 'meals:menu' %}">Menu</a>
             </li>
+            <li
+              class="nav-item {% if active_page == 'contact_us' %}active{% endif %}"
+            >
+              <a class="nav-link" href="{% url 'about:contact_us' %}"
+                >Contact Us</a
+              >
+            </li>
             {% if user.is_authenticated %}
             <!-- Reservation Section for Logged-in Users -->
             <li
