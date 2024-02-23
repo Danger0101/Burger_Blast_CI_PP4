@@ -1,6 +1,6 @@
 {% extends 'about/base.html' %} {% block content %}
 <div class="container mt-5">
-  <div class="card">
+  <div class="card menu-card">
     <div class="card-body">
       <h2 class="menu-title">Our Menu</h2>
       <div class="menu-navigation">
@@ -21,18 +21,11 @@
           {% for meal in meals %} {% if meal.category == 'Side Dishes' %}
           <div class="col-md-6 mb-4">
             <div class="card h-100">
-              {% if meal.image_url %}
-              <img
-                src="{{ meal.image_url }}"
-                class="card-img-top"
-                alt="{{ meal.name }}"
-              />
-              {% endif %}
               <div class="card-body">
-                <h5 class="card-title">{{ meal.name }}</h5>
-                <p class="card-text">{{ meal.description }}</p>
+                <h5 class="card-title meal-title">{{ meal.name }}</h5>
+                <p class="card-text meal-description">{{ meal.description }}</p>
                 <p class="card-text">
-                  <strong>Price:</strong> ${{ meal.price }}
+                  <strong>Price:</strong> £{{ meal.price }}
                 </p>
                 <p class="card-text">
                   <strong>Calories:</strong> {{ meal.calories }}
@@ -57,18 +50,11 @@
           {% for meal in meals %} {% if meal.category == 'Entree' %}
           <div class="col-md-6 mb-4">
             <div class="card h-100">
-              {% if meal.image_url %}
-              <img
-                src="{{ meal.image_url }}"
-                class="card-img-top"
-                alt="{{ meal.name }}"
-              />
-              {% endif %}
               <div class="card-body">
-                <h5 class="card-title">{{ meal.name }}</h5>
-                <p class="card-text">{{ meal.description }}</p>
+                <h5 class="card-title meal-title">{{ meal.name }}</h5>
+                <p class="card-text meal-description">{{ meal.description }}</p>
                 <p class="card-text">
-                  <strong>Price:</strong> ${{ meal.price }}
+                  <strong>Price:</strong> £{{ meal.price }}
                 </p>
                 <p class="card-text">
                   <strong>Calories:</strong> {{ meal.calories }}
@@ -93,18 +79,11 @@
           {% for meal in meals %} {% if meal.category == 'Desserts' %}
           <div class="col-md-6 mb-4">
             <div class="card h-100">
-              {% if meal.image_url %}
-              <img
-                src="{{ meal.image_url }}"
-                class="card-img-top"
-                alt="{{ meal.name }}"
-              />
-              {% endif %}
               <div class="card-body">
-                <h5 class="card-title">{{ meal.name }}</h5>
-                <p class="card-text">{{ meal.description }}</p>
+                <h5 class="card-title meal-title">{{ meal.name }}</h5>
+                <p class="card-text meal-description">{{ meal.description }}</p>
                 <p class="card-text">
-                  <strong>Price:</strong> ${{ meal.price }}
+                  <strong>Price:</strong> £{{ meal.price }}
                 </p>
                 <p class="card-text">
                   <strong>Calories:</strong> {{ meal.calories }}
