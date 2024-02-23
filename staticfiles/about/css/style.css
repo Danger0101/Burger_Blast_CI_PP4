@@ -69,6 +69,45 @@ a {
 }
 
 /* Reservation CSS */
+.reservation-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        color: #262626;
+        text-shadow: 2px 2px 2px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
+.reservation-sub-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
+.reservation-cat-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.05em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
+.reservation-info-text {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: normal;
+        font-size: 1em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+}
+
+/* Pagination CSS */
 .page-item{
         font-family: 'quickSand', sans-serif;
         display: inline-block;
