@@ -115,6 +115,10 @@ a {
         margin-top: 3px;
 }
 
+.change-pass-btn{
+        margin-top: 20px;
+}
+
 /* Menu CSS */
 .menu-title {
         font-family: 'Montserrat', sans-serif;
