@@ -3,7 +3,7 @@
   <div class="row mt-4 justify-content-center">
     <div class="col-lg-6 col-md-8 col-12 offset-md-2">
       <div class="card bg-white p-3 mb-5 authentication-card">
-        <h2 class="mb-4">Contact Us</h2>
+        <h2 class="mb-4 contact-form-title">Contact Us</h2>
         {% for message in messages %}
         <div
           class="alert alert-{{ message.tags }} alert-dismissible fade show"
@@ -15,7 +15,9 @@
         <form method="post" class="mb-2">
           {% csrf_token %}
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label contact-form-sub-title"
+              >Email</label
+            >
             <input
               type="email"
               class="form-control"
@@ -26,7 +28,9 @@
             />
           </div>
           <div class="mb-3">
-            <label for="phone_number" class="form-label">Phone Number</label>
+            <label for="phone_number" class="form-label contact-form-sub-title"
+              >Phone Number</label
+            >
             <input
               type="tel"
               class="form-control"
@@ -37,7 +41,9 @@
             />
           </div>
           <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
+            <label for="message" class="form-label contact-form-sub-title"
+              >Message</label
+            >
             <textarea
               class="form-control"
               id="message"
@@ -47,7 +53,9 @@
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
       </div>
     </div>
