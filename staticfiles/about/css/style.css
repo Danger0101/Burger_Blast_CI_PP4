@@ -98,6 +98,23 @@ a {
         text-align: center;
 }
 
+.reg-sub-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+}
+
+.pass-req-txt{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: normal;
+        font-size: 1em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+        margin-top: 3px;
+}
+
 /* Menu CSS */
 .menu-title {
         font-family: 'Montserrat', sans-serif;
