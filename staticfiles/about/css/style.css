@@ -56,6 +56,48 @@ a {
         margin-bottom: 5px;
 }
 
+/* Contact Form CSS */
+.contact-form-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        color: #262626;
+        text-shadow: 2px 2px 2px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
+.contact-form-sub-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
+/* Authentication CSS */
+.authentication-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        color: #262626;
+        text-shadow: 2px 2px 2px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
+.authentication-sub-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+        justify-content: center;
+        text-align: center;
+}
+
 /* Menu CSS */
 .menu-title {
         font-family: 'Montserrat', sans-serif;
