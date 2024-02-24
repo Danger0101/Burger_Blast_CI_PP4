@@ -14,9 +14,71 @@
         </div>
         {% endfor %}
 
-        <form method="post" action="{% url 'account:register' %}">
-          {% csrf_token %} {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Sign Up</button>
+        <form
+          method="post"
+          action="{% url 'account:register' %}"
+          class="signup-form"
+        >
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="reg-sub-title" for="id_username">Username:</label>
+            {{ form.username }}
+            <div class="pass-req-txt">
+              Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+              only.
+            </div>
+          </div>
+          <hr />
+          <div class="form-group">
+            <label class="reg-sub-title" for="id_first_name">First Name:</label>
+            {{ form.first_name }}
+          </div>
+          <hr />
+          <div class="form-group">
+            <label class="reg-sub-title" for="id_last_name">Last Name:</label>
+            {{ form.last_name }}
+          </div>
+          <hr />
+          <div class="form-group">
+            <label class="reg-sub-title" for="id_email">Email:</label>
+            {{ form.email }}
+          </div>
+          <hr />
+          <div class="form-group">
+            <label class="reg-sub-title" for="id_password1">Password:</label>
+            {{ form.password1 }}
+            <div class="pass-req-txt">
+              <ul class="pass-list">
+                <li>
+                  Your password <strong>can’t</strong> be too similar to your
+                  other personal information.
+                </li>
+                <li>
+                  Your password <strong>must</strong> contain at least 8
+                  characters.
+                </li>
+                <li>
+                  Your password <strong>can’t</strong> be a commonly used
+                  password.
+                </li>
+                <li>
+                  Your password <strong>can’t</strong> be entirely numeric.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="reg-sub-title" for="id_password2"
+              >Password confirmation:</label
+            >
+            {{ form.password2 }}
+            <div class="pass-req-txt">
+              Enter the same password as before, for verification.
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
         </form>
       </div>
     </div>
