@@ -19,7 +19,8 @@ def my_reservations(request):
     '''
     This view displays a list of future reservations for the logged-in user.
     '''
-    now = timezone.now()  # Get the current time
+    # Get the current time
+    now = timezone.now()
 
     # Filter reservations based on user type
     if request.user.is_staff:
