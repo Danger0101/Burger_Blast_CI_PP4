@@ -335,7 +335,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 **Seting Up Database**
 
 1. Go to [elephantsql](https://customer.elephantsql.com/login)
-2. Make an account or sign up (I used my GitHub account)
+2. Make an account or sign in (I used my GitHub account)
 3. Once logged in hit the "+ Create New Instance"
 
 ![elephantsql loggedin page](./staticfiles/images/esql_img/esql_loggedin_page.png)
