@@ -302,28 +302,28 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 2. Make an account or sign up (I used my GitHub account)
 3. Once logged in hit the "+ Create New Instance"
 
-![elephantsql loggedin page]()
+![elephantsql loggedin page](./staticfiles/images/esql_img/esql_loggedin_page.png)
 
 4. Set up a name for the plan.
 5. Select version for the plan.
 6. **Optional** Add any tags if you wish
 7. Hit "select region" button
 
-![elephantsql Setup Paln page]()
+![elephantsql Setup Paln page](./staticfiles/images/esql_img/esql_plan_setup_page.png)
 
 8. Select a Data Center.
 9. Once chosen hit the "Review" button
 
-![elephantsql Data Center page]()
+![elephantsql Data Center page](./staticfiles/images/esql_img/esql_select_region_page.png)
 
 10. If all looks correct hit "Create Instance"
 
-![elephantsql Conrifm page]()
+![elephantsql Conrifm page](./staticfiles/images/esql_img/esql_confirm_page.png)
 
 11. Now you have your database set up all that is left is linking it to django project.
 12. URL has a copy button hit this to copy your URL
 
-![elephantsql Data Base page]()
+![elephantsql Data Base page](./staticfiles/images/esql_img/esql_db_page.png)
 
 12. Now you need to put this in your env file for the project or in your heroku config variables
 
