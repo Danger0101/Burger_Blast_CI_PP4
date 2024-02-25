@@ -14,5 +14,4 @@ send_mail(
     settings.DEFAULT_FROM_EMAIL,
     ['jhummel001@gmail.com'],
 )
-
 # Works in development environment
