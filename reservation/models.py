@@ -57,9 +57,3 @@ class Reservation(models.Model):
         if not self.confirmation_number:
             self.confirmation_number = str(uuid.uuid4())
         super().save(*args, **kwargs)
-
-    def __str__(self):
-        return (
-            f"{self.first_name} {self.last_name} "
-            f"({self.email}) - {self.confirmation_number}"
-        )
