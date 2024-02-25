@@ -391,6 +391,16 @@ python manage.py migrate
 
 - I was able to make this using [django-extensions](https://pypi.org/project/django-extensions/) and [graphviz](https://django-extensions.readthedocs.io/en/latest/graph_models.html)
 
+**Broken apart visuals**
+
+![Main Data Visiualization](./staticfiles/images/db_visualization/main_data.png)
+
+![Admin Interface Data Visiualization](./staticfiles/images/db_visualization/admin_interface.png)
+
+![Meals Data Visiualization](./staticfiles/images/db_visualization/meals_data.png)
+
+![Session Data Visiualization](./staticfiles/images/db_visualization/session_data.png)
+
 ---
 
 ## Deployment
