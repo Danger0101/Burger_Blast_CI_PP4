@@ -44,6 +44,10 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 ![Signup Page](./staticfiles/images/feature_images/signup_page.png)
 
+**Signup Email**
+
+![Signup Email Image](./staticfiles/images/burger_blast_email_images)
+
 ---
 
 ### Sign In
@@ -59,6 +63,14 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 - Alows users to change their account details or password.
 
 ![Change Details Page](./staticfiles/images/feature_images/change_details_page.png)
+
+**Change Details Email**
+
+![Change Details Image](./staticfiles/images/burger_blast_email_images/account_info_update_email.png)
+
+**Change Password Email**
+
+![Change Password Email Image](./staticfiles/images/burger_blast_email_images/account_password_update_email.png)
 
 ---
 
@@ -78,6 +90,10 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 ![Make Reservations Page](./staticfiles/images/feature_images/Make_reservation_page.png)
 
+**Make Reservation Email**
+
+![Signup Email Image](./staticfiles/images/burger_blast_email_images/reservation_confirmation_email.png)
+
 ---
 
 ### Edit Reservations
@@ -86,6 +102,18 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 ![Edit Reservation Page](./staticfiles/images/feature_images/edit_reservation_page.png)
 
+**Edit Reservation Email**
+
+![Signup Email Image](./staticfiles/images/burger_blast_email_images/reservation_update_confirmation_email.png)
+
+**Staff Cancel Reservation Email**
+
+![Signup Email Image](./staticfiles/images/burger_blast_email_images/reservation_cancel_staff_email.png)
+
+**User Cancel Reservation Email**
+
+![Signup Email Image](./staticfiles/images/burger_blast_email_images)
+
 ---
 
 ### Menu
@@ -93,6 +121,14 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 - The menu page is a part of a website where you can explore the different food options available. It's designed to make it easy for you to find what you're looking for by organizing the menu into categories like sides, entrees, and desserts. Each category has its own section that you can navigate to by clicking on buttons. When you click on a category, it shows you all the items available in that category. Each item is displayed with a name, a description, price, calories, allergens, and preparation time. This layout helps you quickly browse through the menu and decide what you want to order based on your preferences.
 
 ![Menu Page](./staticfiles/images/feature_images/menu_page.png)
+
+---
+
+### Contact us
+
+- This page allows a user to fill out a form that will then be emailed to the restaurant.
+
+![Contact us Page]()
 
 ---
 
