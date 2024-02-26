@@ -6,15 +6,62 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 ## User Stories
 
--
+** Sprint One**
+
+- The Basics
+
+| **User Stories**                                                                                                     | **Needed for MVP** | Completed |
+| -------------------------------------------------------------------------------------------------------------------- | :----------------: | :-------: |
+| As a user, I can view basic information about Burger Blast, such as location and contact details.                    |        Yes         |    Yes    |
+| As a user, I can access the Burger Blast website seamlessly on various devices, ensuring a user-friendly experience. |        Yes         |    Yes    |
+
+** Sprint Two**
+
+- Menu and authentication system.
+
+| **User Stories**                                                                                                                                                                        | **Needed for MVP** | Completed |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------: | :-------: |
+| As a user, I desire the capability to register for an account and receive a confirmation email, enabling me login and out.                                                              |        Yes         |    Yes    |
+| As a user, I aim to effortlessly log in and out of my account, ensuring secure access to my reservation history and personal information.                                               |        Yes         |    Yes    |
+| As a customer, I desire a menu with comprehensive descriptions to facilitate informed decisions about the dishes offered, helping me assess their appeal before making a dining choice. |        Yes         |    Yes    |
+
+**Sprint Three**
+
+- The admin site, socials and email integrations.
+
+| **User Stories**                                                                                                                                                 | **Needed for MVP** | Completed |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------: | :-------: |
+| As a user, I can share Burger Blast on social media and follow updates, enhancing my engagement with the restaurant.                                             |        Yes         |    Yes    |
+| As a user, I receive timely notifications about reservation confirmation, changes, cancelations or changes to user details and password, ensuring I stay informe |        Yes         |    Yes    |
+| As a staff member, I can edit account information, delete user accounts, manage reservations, and update menu items using an admin dashboard.                    |        Yes         |    Yes    |
+| As a customer, I can modify or cancel my reservation, giving me flexibility in managing my dining plans.                                                         |        Yes         |    Yes    |
+| As a customer, I can make a reservation for a specific date and time, ensuring a table is available when I arrive.                                               |        Yes         |    Yes    |
+
+**Sprint Four**
+
+- The extra tidbits aka nice to haves.
+
+| **User Stories**                                                                                                                                   | **Needed for MVP** | Completed |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------: | :-------: |
+| As a customer, I can place orders online for pickup or delivery, providing a convenient way to enjoy Burger Blast's menu.                          |         No         |    No     |
+| As a customer, I want the ability to delete my user account with a secure verification process, providing me control over my personal information. |         No         |    No     |
+| As a user, I want a secure process to recover my password in case I forget it, ensuring I can regain access to my account.                         |         No         |    No     |
+| As a user, I want to be able to fill out a contact form to message the restaurant, Providing me another form of contact if needed                  |         No         |    Yes    |
+| As staff, I want to be able to receive the contact forms in store email, So that I can respond in a timely manner to any inquiries                 |         No         |    Yes    |
+
+(MVP = Minimal Viable Product)
 
 ## Features
 
 ### Navbar
 
+- The Burger Blast logo is a visual emblem that encapsulates the essence and character of our restaurant. It serves as a succinct representation of our brand identity, reflecting our commitment to delivering delicious burgers in a vibrant and welcoming atmosphere.
+
 ![Navbar](./staticfiles/images/feature_images/navbar_shown.jpg)
 
 ### Logo
+
+- Visually sets the standard for the brands perception generally the first thing seen by customers and the lasting image
 
 ![Logo Image on site](./staticfiles/images/feature_images/logo_on_site.png)
 
@@ -202,15 +249,42 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
-| **File** | **Line** | **Errors or Warnings** |
-| :------: | :------: | :--------------------: |
-|          |          |                        |
+|                   **File**                    | **Line** | **Errors or Warnings** |
+| :-------------------------------------------: | :------: | :--------------------: |
+|                 about\apps.py                 |   All    |          None          |
+|                about\forms.py                 |   All    |          None          |
+|                 about\urls.py                 |   All    |          None          |
+|                about\views.py                 |   All    |          None          |
+|            authentication\apps.py             |   All    |          None          |
+|            authentication\forms.py            |   All    |          None          |
+| authentication\tests_authentication_basics.py |   All    |          None          |
+|            authentication\urls.py             |   All    |          None          |
+|            authentication\views.py            |   All    |          None          |
+|             burger_blast\asgi.py              |   All    |          None          |
+|           burger_blast\settings.py            |   All    |          None          |
+|             burger_blast\urls.py              |   All    |          None          |
+|             burger_blast\wsgi.py              |   All    |          None          |
+|                 email_test.py                 |   All    |          None          |
+|                   manage.py                   |   All    |          None          |
+|                meals\admin.py                 |   All    |          None          |
+|                 meals\apps.py                 |   All    |          None          |
+|                meals\models.py                |   All    |          None          |
+|            meals\test_menu_add.py             |   All    |          None          |
+|           meals\test_menu_remove.py           |   All    |          None          |
+|                 meals\urls.py                 |   All    |          None          |
+|                meals\views.py                 |   All    |          None          |
+|             reservation\admin.py              |   All    |          None          |
+|              reservation\apps.py              |   All    |          None          |
+|             reservation\forms.py              |   All    |          None          |
+|             reservation\models.py             |   All    |          None          |
+|              reservation\urls.py              |   All    |          None          |
+|             reservation\views.py              |   All    |          None          |
 
 ### CSS
 
 -checked with [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) completed with no issues found.
 
-![]()
+![css verification img](./staticfiles/images/css_verification_img.png)
 
 ### HTML
 
@@ -493,8 +567,10 @@ Used Heroku to deploy the website. You can [Visit Live Site by clicking here](ht
 
 ## Future feature ideas
 
-|                                Feature Idea                                 | Why Not Implimented |
-| :-------------------------------------------------------------------------: | :-----------------: |
-| Reviews page for users to leave a review or edit theirs using a star rating |    Nice to have     |
-|                Email verification prior to accounts creation                |    Nice to have     |
-|                            Users Delete accounts                            |    Nice to have     |
+|       Feature Ideas        | Why Not Implimented |
+| :------------------------: | :-----------------: |
+|        Reviews page        |    Nice to have     |
+|     Email verification     |    Nice to have     |
+|   Users Delete accounts    |    Nice to have     |
+|   Reset/Forgot Password    |    Nice to have     |
+| Online Ordering/Deliveries |    Nice to have     |
