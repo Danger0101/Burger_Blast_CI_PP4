@@ -266,12 +266,19 @@ The site allows users:
 
 - Must use local Django database for the django tests
 
-|                    Script                     | Passed? |  Other information  | Terminal line | 
-| :-------------------------------------------: | :-----: | :-----------------: | :-: |
-|                 email_test.py                 |   Yes   |   Email Recieved    |  |
-|            meals\test_menu_add.py             |   Yes   | No redirect testing | python manage.py test meals.test_menu_add |
-|           meals\test_menu_remove.py           |   Yes   | No redirect testing | python manage.py test meals.test_menu_remove |
-| authentication\tests_authentication_basics.py |   Yes   |        None         | python manage.py test authentication.tests_authentication_basics |
+|             Script             | Passed? |  Other information  |
+| :----------------------------: | :-----: | :-----------------: |
+|         email_test.py          |   Yes   |   Email Recieved    |
+|        test_menu_add.py        |   Yes   | No redirect testing |
+|      test_menu_remove.py       |   Yes   | No redirect testing |
+| tests_authentication_basics.py |   Yes   |        None         |
+
+|             Script             |                          Terminal line                           |
+| :----------------------------: | :--------------------------------------------------------------: |
+|         email_test.py          |                       Ran as a python file                       |
+|        test_menu_add.py        |            python manage.py test meals.test_menu_add             |
+|      test_menu_remove.py       |           python manage.py test meals.test_menu_remove           |
+| tests_authentication_basics.py | python manage.py test authentication.tests_authentication_basics |
 
 ### Bugs/Issues Encountered
 
