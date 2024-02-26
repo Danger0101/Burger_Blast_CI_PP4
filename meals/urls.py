@@ -10,8 +10,8 @@ urlpatterns = [
     path('menu/', menu_view, name='menu'),
     path('create-meal/', create_or_update_meal, name='create_meal'),
     path(
-        'update-meal/<int:meal_id>/', 
-        create_or_update_meal, 
+        'update-meal/<int:meal_id>/',
+        create_or_update_meal,
         name='update_meal'
     ),
     path('meal-detail/<slug:slug>/', meal_detail, name='meal_detail'),
