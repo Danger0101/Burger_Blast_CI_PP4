@@ -381,6 +381,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 ![Contrast checker menu Image](./staticfiles/images/contrast_checks/menu_page.png)
 
 **Contact Us**
+
 ![Contrast checker contact us Image](./staticfiles/images/contrast_checks/contact_us_page.png)
 
 **Login**
