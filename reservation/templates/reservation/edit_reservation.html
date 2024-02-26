@@ -1,13 +1,82 @@
 {% extends 'about/base.html' %} {% block content %}
 <div class="container">
-  <div class="row mt-4">
-    <div class="col-lg-8 col-md-8 col-12 offset-lg-2 offset-md-2">
+  <div class="row mt-4 justify-content-center">
+    <div class="col-lg-6 col-md-8 col-12">
       <div class="card bg-white p-3 mb-5 about-card">
-        <h2 class="mb-4">Edit Reservation</h2>
-        <form method="post">
-          {% csrf_token %} {{ form.as_p }}
+        <h2 class="mb-4 text-center reservation-title">Edit Reservation</h2>
+        <form method="post" class="form" id="make-reservation-form">
+          {% csrf_token %}
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="first_name">
+                {{ form.first_name.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.first_name }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="last_name">
+                {{ form.last_name.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.last_name }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="email">
+                {{ form.email.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.email }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="reservation_date">
+                {{ form.reservation_date.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.reservation_date }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="reservation_time">
+                {{ form.reservation_time.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.reservation_time }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label
+                class="reservation-form-sub-title"
+                for="reservation_duration"
+              >
+                {{ form.party_size.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.party_size }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="phone_number">
+                {{ form.phone_number.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.phone_number }}</div>
+          </div>
+          <div class="form-group text-center mb-3">
+            <div class="row">
+              <label class="reservation-form-sub-title" for="special_requests"
+                >{{ form.special_requests.label_tag }}
+              </label>
+            </div>
+            <div class="row">{{ form.special_requests }}</div>
+          </div>
           <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="submit" class="btn btn-primary mt-3">
+              Submit Reservation
+            </button>
           </div>
         </form>
       </div>
