@@ -106,16 +106,19 @@ WSGI_APPLICATION = 'burger_blast.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
-}
+if os.getenv('DEPLOYED'):
+    # If deployed, use the production database configuration
+    DATABASES = {
+        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+    }
+else:
+    # If local, use the local database configuration
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -182,6 +185,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'burgerblastrestaurant@gmail.com'
+ADMIN_EMAIL = 'burgerblastrestaurant@gmail.com'
 
 # Logout redirect URL
 LOGOUT_REDIRECT_URL = 'index'
