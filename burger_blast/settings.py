@@ -105,19 +105,15 @@ WSGI_APPLICATION = 'burger_blast.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+# If local, use the local database configuration
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 
-if os.getenv('DEPLOYED'):
-    # If deployed, use the production database configuration
-    DATABASES = {
+DATABASES = {
         'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-    }
-else:
-    # If local, use the local database configuration
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
     }
 
 # Password validation
