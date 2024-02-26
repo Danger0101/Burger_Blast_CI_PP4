@@ -151,15 +151,15 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 **Edit Reservation Email**
 
-![Signup Email Image](./staticfiles/images/burger_blast_email_images/reservation_update_confirmation_email.png)
+![Edit Email Image](./staticfiles/images/burger_blast_email_images/reservation_update_confirmation_email.png)
 
 **Staff Cancel Reservation Email**
 
-![Signup Email Image](./staticfiles/images/burger_blast_email_images/reservation_cancel_staff_email.png)
+![Sraff Cancel Email Image](./staticfiles/images/burger_blast_email_images/reservation_cancel_staff_email.png)
 
 **User Cancel Reservation Email**
 
-![Signup Email Image](./staticfiles/images/burger_blast_email_images)
+![User Cancel Email Image](./staticfiles/images/burger_blast_email_images)
 
 ---
 
