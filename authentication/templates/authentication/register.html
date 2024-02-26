@@ -23,7 +23,7 @@
           <div class="form-group">
             <label class="reg-sub-title" for="id_username">Username:</label>
             {{ form.username }}
-            <div class="pass-req-txt">
+            <div class="pass-req-txt" id="id_username_helptext">
               Required. 150 characters or fewer. Letters, digits and @/./+/-/_
               only.
             </div>
@@ -47,7 +47,7 @@
           <div class="form-group">
             <label class="reg-sub-title" for="id_password1">Password:</label>
             {{ form.password1 }}
-            <div class="pass-req-txt">
+            <div class="pass-req-txt" id="id_password1_helptext">
               <ul class="pass-list">
                 <li>
                   Your password <strong>can’t</strong> be too similar to your
@@ -72,7 +72,7 @@
               >Password confirmation:</label
             >
             {{ form.password2 }}
-            <div class="pass-req-txt">
+            <div class="pass-req-txt" id="id_password2_helptext">
               Enter the same password as before, for verification.
             </div>
           </div>
