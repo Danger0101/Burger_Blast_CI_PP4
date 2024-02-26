@@ -55,7 +55,9 @@ def contact_us(request):
                 [settings.DEFAULT_FROM_EMAIL],
                 fail_silently=False,
             )
-            messages.success(request, 'Your message has been sent successfully!')
+            messages.success(
+                request, 'Your message has been sent successfully!'
+            )
             return redirect('index')
         else:
             messages.error(request, 'Please correct the errors below.')

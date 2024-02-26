@@ -8,7 +8,8 @@ from .admin import MealAdmin
 
 class AdminRemoveItemTestCase(TestCase):
     '''
-    This test case is used to remove items from the menu using the admin interface.
+    This test case is used to remove items from
+    the menu using the admin interface.
     '''
     def setUp(self):
         # Create a superuser
@@ -45,7 +46,9 @@ class AdminRemoveItemTestCase(TestCase):
         categories = ['Entree', 'Side Dishes', 'Desserts']
         for category in categories:
             meal = Meal.objects.get(name=f'Test Meal {category}')
-            response_delete = self.client.post(reverse('admin:meals_meal_delete', args=(meal.id,)))
+            response_delete = self.client.post(
+                reverse('admin:meals_meal_delete', args=(meal.id,))
+            )
             print(f"Removed {category} from the menu.")
 
         # Register the Meal model with the custom admin site

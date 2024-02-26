@@ -27,7 +27,9 @@ class AuthenticationTestCase(TestCase):
     def test_login(self):
         # Test login functionality
         print("Testing login functionality...")
-        User.objects.create_user(username='test_user', password='testpassword123')
+        User.objects.create_user(
+            username='test_user', password='testpassword123'
+        )
         response = self.client.post(reverse('account:login'), {
             'username': 'test_user',
             'password': 'testpassword123'
@@ -40,7 +42,9 @@ class AuthenticationTestCase(TestCase):
     def test_logout(self):
         # Test logout functionality
         print("Testing logout functionality...")
-        User.objects.create_user(username='test_user', password='testpassword123')
+        User.objects.create_user(
+            username='test_user', password='testpassword123'
+        )
         self.client.login(username='test_user', password='testpassword123')
         response = self.client.get(reverse('account:logout'))
         print("Logout response:", response)

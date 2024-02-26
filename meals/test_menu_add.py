@@ -40,7 +40,9 @@ class AdminAddItemTestCase(TestCase):
             self.client.post(reverse('admin:meals_meal_add'), meal_data)
             print(f"Added {category} to the menu.")
             # Ensure the item is added successfully
-            self.assertTrue(Meal.objects.filter(name=f'Test Meal {category}').exists())
+            self.assertTrue(
+                Meal.objects.filter(name=f'Test Meal {category}').exists()
+            )
             print(f"Success {category} added to the menu.")
 
         # Register the Meal model with the custom admin site
