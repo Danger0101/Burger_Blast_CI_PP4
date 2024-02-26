@@ -181,6 +181,13 @@ a {
         text-align: center;
 }
 
+.reservation-form-sub-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        color: #262626;
+        text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
+}
+
 .reservation-cat-title {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
