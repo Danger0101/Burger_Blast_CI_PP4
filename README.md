@@ -314,7 +314,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ### CSS
 
--checked with [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) completed with no issues found.
+- checked my custom css with [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) direct input; completed with no issues found.
 
 ![css verification img](./staticfiles/images/css_verification_img.png)
 
