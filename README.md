@@ -135,7 +135,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - The "Make Reservations" page is where you can easily reserve a spot or book a service. It's designed to be user-friendly, with a simple form for you to fill out. You'll find fields asking for necessary information, such as your name, contact details, and the specifics of what you're booking. Once you've filled out the form, just hit the "Submit Reservation" button, and your reservation will be confirmed. It's a convenient way to secure your spot without any hassle.
 
-![Make Reservations Page](./staticfiles/images/feature_images/Make_reservation_page.png)
+![Make Reservations Page](./staticfiles/images/feature_images/make_reservation_page.png)
 
 **Make Reservation Email**
 
@@ -175,7 +175,7 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 
 - This page allows a user to fill out a form that will then be emailed to the restaurant.
 
-![Contact us Page]()
+![Contact us Page](./staticfiles/images/feature_images/contact_us_page.png)
 
 ---
 
@@ -186,6 +186,24 @@ Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedi
 ![Image of footer](./staticfiles/images/feature_images/footer.png)
 
 ---
+
+### Error Pages
+
+**400**
+
+![400 html error](./staticfiles/images/feature_images/400_msg.png)
+
+**403**
+
+![403 html error](./staticfiles/images/feature_images/403_msg.png)
+
+**404**
+
+![404 html error](./staticfiles/images/feature_images/404_page.png)
+
+**500**
+
+![500 html error](./staticfiles/images/feature_images/500_page.png)
 
 ### Django Admin
 
