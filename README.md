@@ -320,9 +320,31 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ### HTML
 
-- checked with [W3 HTML Validator](https://validator.w3.org/) on all pages with no errors or warnings.
+- checked all non logged in pages with [W3 HTML Validator](https://validator.w3.org/) on all pages with no errors or warnings just info and trailing "/" which is not required.
 
-![W3 HTML Validation Image](assets/images/meaningfulcareersreadmeimg/w3htmlvalidation.png)
+**Index**
+
+![Index HTML w3 Validation Image](./staticfiles/images/html_checks/index_html_check.png)
+
+**About**
+
+![About Us HTML w3 Validation Image](./staticfiles/images/html_checks/about_html_check.png)
+
+**Menu**
+
+![Menu HTML w3 Validation Image](./staticfiles/images/html_checks/menu_html_check.png)
+
+**Contact Us**
+
+![Contact Us HTML w3 Validation Image](./staticfiles/images/html_checks/contact_us_html_check.png)
+
+**Login**
+
+![Login HTML w3 Validation Image](./staticfiles/images/html_checks/login_html_check.png)
+
+**Sign Up**
+
+![Signup HTML w3 Validation Image](./staticfiles/images/html_checks/sign_up_html_check.png)
 
 ### Contrast
 
@@ -350,6 +372,8 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 **Sign Up**
 
 ![Contrast checker sign up Image](./staticfiles/images/contrast_checks/sign_up_page.png)
+
+## Chrome Lighthouse
 
 ### Index
 
