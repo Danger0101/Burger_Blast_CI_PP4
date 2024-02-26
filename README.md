@@ -1,6 +1,20 @@
 # Burger Blast
 
-Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedicated to crafting unforgettable experiences through sensational bites and impeccable service.
+Welcome to Burger Blast, where flavor meets delight! We're a culinary haven dedicated to crafting unforgettable experiences through sensational bites and impeccable service. This is a theoretical burger restaurant based in London, UK.
+
+The site allows users:
+
+- To view information about the location
+- View our up to date Menu
+- Contact us through a form sumbition
+- Sign up for an account
+- Login or out of the account
+- Change account details and password
+- While logged in the user has the ability to create reservations up to 2 weeks in advance starting from the next day counting 14 days.
+- They can then edit these reservations as needed
+- Users and staff can edit or delete reservations
+- Admin users or Staff can access the admin page and login
+- From here they have direct control to modify Menu, Users, Reservations, and more.
 
 ---
 
@@ -312,9 +326,30 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ### Contrast
 
-- Checked all pages with [A11Y contrast checker](https://color.a11y.com/) Cameback with no issues.
+- Checked all non logged in pages with [A11Y contrast checker](https://color.a11y.com/) Cameback with no issues.
 
-![Contrast checker Image]()
+**Index**
+
+![Contrast checker index Image](./staticfiles/images/contrast_checks/index_page.png)
+
+**About Us**
+
+![Contrast checker about us Image](./staticfiles/images/contrast_checks/about_page.png)
+
+**Menu**
+
+![Contrast checker menu Image](./staticfiles/images/contrast_checks/menu_page.png)
+
+**Contact Us**
+![Contrast checker contact us Image](./staticfiles/images/contrast_checks/contact_us_page.png)
+
+**Login**
+
+![Contrast checker login Image](./staticfiles/images/contrast_checks/login_page.png)
+
+**Sign Up**
+
+![Contrast checker sign up Image](./staticfiles/images/contrast_checks/sign_up_page.png)
 
 ### Index
 
