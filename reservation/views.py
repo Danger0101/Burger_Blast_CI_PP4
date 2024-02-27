@@ -197,11 +197,12 @@ def send_reservation_confirmation_email(reservation):
         "Thank you for choosing our restaurant.\n\n"
         "Best regards,\nBurger Blast Team"
     )
+    recipients = [reservation.user.email, reservation.email]
     send_mail(
         subject,
         message,
         settings.DEFAULT_FROM_EMAIL,
-        [reservation.user.email]
+        recipients
     )
 
 
@@ -225,12 +226,12 @@ def send_reservation_update_confirmation_email(updated_reservation):
         "Thank you for choosing our restaurant.\n\n"
         "Best regards,\nBurger Blast Team"
     )
-
+    recipients = [updated_reservation.user.email, updated_reservation.email]
     send_mail(
         subject,
         message,
         settings.DEFAULT_FROM_EMAIL,
-        [updated_reservation.user.email]
+        recipients
     )
 
 
@@ -254,7 +255,6 @@ def send_cancel_email_to_user(deleted_reservation_details):
         "Thank you for your understanding.\n\n"
         "Sincerely,\nBurger Blast Team"
     )
-
     send_mail(
         subject,
         message,
@@ -284,10 +284,9 @@ def send_confirmation_email_to_user(deleted_reservation_details):
         " please don't hesitate to contact us.\n\n"
         "Best regards,\nBurger Blast Team"
     )
-
     send_mail(
         subject,
         message,
         settings.DEFAULT_FROM_EMAIL,
         [deleted_reservation_details['user'].email]
-        )
+    )
