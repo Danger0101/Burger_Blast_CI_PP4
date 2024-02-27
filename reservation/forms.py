@@ -59,8 +59,12 @@ class ReservationForm(forms.ModelForm):
             self.fields['last_name'].initial = user.last_name
             self.fields['email'].initial = user.email
         if instance:
-            self.fields['reservation_date'].initial = instance.reservation_datetime.date()
-            self.fields['reservation_time'].initial = instance.reservation_datetime.time()
+            self.fields['reservation_date'].initial = (
+                instance.reservation_datetime.date()
+            )
+            self.fields['reservation_time'].initial = (
+                instance.reservation_datetime.time()
+            )
 
     class Media:
         '''

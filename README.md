@@ -282,13 +282,13 @@ The site allows users:
 |                                                     What test was completed                                                      | Passed? Y(yes)/N(no) |           Other information           |
 | :------------------------------------------------------------------------------------------------------------------------------: | :------------------: | :-----------------------------------: |
 |                                                   Make a super user (Manager)                                                    |          Y           |                                       |
-|                                                      Make a staff member ()                                                      |          N           |                                       |
+|                                                      Make a staff member ()                                                      |          Y           |                                       |
 |                                     Sign up as a customer/user (Jane.Doe, John.Doe, Jon.Doe)                                     |          Y           |                                       |
 |                                                   Login to site as a superuser                                                   |          Y           |                                       |
-|                                                     Login to site as a staff                                                     |          N           |                                       |
+|                                                     Login to site as a staff                                                     |          Y           |                                       |
 |                                                 Login to site as a customer/user                                                 |          Y           |                                       |
 |                                                  Log out of site as a superuser                                                  |          Y           |                                       |
-|                                                    Log out of site as a staff                                                    |          N           |                                       |
+|                                                    Log out of site as a staff                                                    |          Y           |                                       |
 |                                                Log out of site as a customer/user                                                |          Y           |                                       |
 |                                              Login to Django admin as customer/user                                              |          Y           |  Only staff can log in successfully   |
 |                                                Login to Django admin as superuser                                                |          Y           |  Only staff can log in successfully   |
@@ -332,15 +332,16 @@ The site allows users:
 
 ### Bugs/Issues Encountered
 
-|                                  Bugs/Issues Encountered                                   |                              How problem was fixed                               | Fixed? |
-| :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :----: |
-|         Enabling user sign-up with email verification due to email sending issues.         |                 Removed the verification prior to making it live                 |  Yes   |
-|                         Getting images to load into the menu items                         |              Removed due to time constraint may add back in future               |  Yes   |
-|                          Getting static files to work as intended                          |         Tried different code variations, settled on one store location.          |  Yes   |
-|                     Getting static file js to load for menu selection                      |              added it in script tags instead as its a small script               |  Yes   |
-|       Users could set any date or time in making reservation whether future or past        | JS and Python ensure bookings within opening hours, No same-day online bookings. |  Yes   |
-| If a user attempts to book two reservations for the same date and time, it won't be saved. |                               Not fixed currently                                |   No   |
-|                Show password disapearing on certian browsers such as chrome                |                               Not fixed currently                                |   No   |
+| Bugs/Issues Encountered                                                                    |                        How problem was fixed or ammended                         | Fixed? |
+| ------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------: | :----: |
+| Enabling user sign-up with email verification due to email sending issues.                 |                 Removed the verification prior to making it live                 |  Yes   |
+| Getting images to load into the menu items                                                 |              Removed due to time constraint may add back in future               |  Yes   |
+| Getting static files to work as intended                                                   |         Tried different code variations, settled on one store location.          |  Yes   |
+| Getting static file js to load for menu selection                                          |              added it in script tags instead as its a small script               |  Yes   |
+| Users could set any date or time in making reservation whether future or past              | JS and Python ensure bookings within opening hours, No same-day online bookings. |  Yes   |
+| If a user attempts to book two reservations for the same date and time, it won't be saved. |                  Removed the section of code causing the issue                   |  Yes   |
+| Show password disapearing on certian browsers such as chrome                               |                               Not fixed currently                                |   No   |
+| Edit reservation not populating the time due to the way field is set up                    |              <p> fields added to alert user to original reservation              |   No   |
 
 ---
 
