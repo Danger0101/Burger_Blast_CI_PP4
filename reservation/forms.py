@@ -4,7 +4,6 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from .models import Reservation
 
-
 class ReservationForm(forms.ModelForm):
     '''
     The ReservationForm class is used to
@@ -89,6 +88,8 @@ class ReservationForm(forms.ModelForm):
             raise ValidationError("Party size is required.")
         if party_size <= 0:
             raise ValidationError("Party size must be greater than zero.")
+        if party_size > 20:
+            cleaned_data['party_size'] = 20
 
         if not self.is_valid_reservation_date_time(
             reservation_date, reservation_time
