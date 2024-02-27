@@ -28,6 +28,10 @@ a {
         font-family: 'Montserrat', sans-serif;
 }
 
+i {
+        font-size: 1.5em;
+}
+
 /* Index CSS */
 .hours {
         text-align: center;
@@ -106,7 +110,7 @@ a {
         text-shadow: 0.5px 0.5px 0.5px #b5b5b5;
 }
 
-.pass-req-txt{
+.pass-req-txt {
         font-family: 'Open Sans', sans-serif;
         font-weight: normal;
         font-size: 1em;
@@ -115,7 +119,7 @@ a {
         margin-top: 3px;
 }
 
-.change-pass-btn{
+.change-pass-btn {
         margin-top: 20px;
 }
 
@@ -130,7 +134,7 @@ a {
         text-align: center;
 }
 
-.menu-category-title{
+.menu-category-title {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 1.5em;
@@ -140,7 +144,7 @@ a {
         text-align: center;
 }
 
-.meal-title{
+.meal-title {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 1.2em;
@@ -150,7 +154,7 @@ a {
         text-align: center;
 }
 
-.meal-description{
+.meal-description {
         font-family: 'Open Sans', sans-serif;
         font-weight: normal;
         font-size: 1em;
@@ -207,7 +211,7 @@ a {
 }
 
 /* Pagination CSS */
-.page-item{
+.page-item {
         font-family: 'quickSand', sans-serif;
         display: inline-block;
         text-align: center;
@@ -227,7 +231,7 @@ a {
 }
 
 /* About CSS */
-.about-title{
+.about-title {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 2em;
@@ -237,14 +241,14 @@ a {
         text-align: center;
 }
 
-.about-sub-title{
+.about-sub-title {
         font-family: 'Montserrat', sans-serif;
-                font-weight: bold;
-                font-size: 1.2em;
-                color: #262626;
-                text-shadow: 2px 2px 2px #b5b5b5;
-                justify-content: center;
-                text-align: center;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #262626;
+        text-shadow: 2px 2px 2px #b5b5b5;
+        justify-content: center;
+        text-align: center;
 }
 
 /* Navbar CSS */
@@ -254,6 +258,7 @@ a {
         justify-content: space-between;
         flex-wrap: wrap;
 }
+
 .navbar-nav {
         flex-direction: column;
         align-items: center;
@@ -281,7 +286,7 @@ a {
 }
 
 /* Card CSS */
-.my-reservation-card{
+.my-reservation-card {
         opacity: 0.9;
         color: #262626;
         background-color: #f2f2f2e0;
@@ -290,7 +295,7 @@ a {
         margin: 0px 0px 20px 0px;
 }
 
-.menu-card{
+.menu-card {
         opacity: 0.9;
         color: #262626;
         background-color: #f2f2f2e0;
