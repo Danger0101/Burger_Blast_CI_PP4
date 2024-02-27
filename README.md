@@ -67,7 +67,7 @@ The site allows users:
 **[Setup](#setup)**
 
 - [Database](#database)
-- [Cloudinary]()
+- [Cloudinary](#cloudinary)
 - [Deployment](#deployment)
 
 **More**
