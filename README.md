@@ -229,27 +229,51 @@ The site allows users:
 
 - Django admin is a powerful tool designed to make managing a website easier for staff members. It provides a user-friendly interface where staff can easily add, edit, or delete content without needing technical skills. Staff members can log in and access a dashboard that gives them control over various aspects of the website, such as managing user accounts, updating product listings, posting articles, and more. The admin panel organizes information neatly, allowing staff to navigate through different sections effortlessly. It's like having a control center for the website, making it simple for staff members to keep everything running smoothly and up-to-date.
 
-![Admin login image]()
+![Admin login image](./staticfiles/images/feature_images/admin/admin_login_page.png)
 
-![Admin site logged in image]()
+![Admin site logged in image](./staticfiles/images/feature_images/admin/admin_main_page.png)
+
+**Django admin_interface and colorfield**
+
+- Lightly experimented but setteled quickly with the current theme this was a pip package I found that so far I really like.
+
+![Theme main page](./staticfiles/images/feature_images/admin/admin_theme_page.png)
+
+![Theme edit page](./staticfiles/images/feature_images/admin/admin_theme_edit_page.png)
 
 **Meals**
 
-![Main admin meals]()
+- Allows admins to view, create, edit, and delete meals as needed.
 
-![Make or edit admin meals]()
+![Main admin meals](./staticfiles/images/feature_images/admin/admin_meals_page.png)
+
+![Make or edit admin meals](./staticfiles/images/feature_images/admin/admin_meals_edit_page.png)
 
 **Reservations**
 
-![Main admin reservations]()
+- Allows admins to view, create, edit, and delete reservations as needed.
 
-![Make or edit admin reservations]()
+![Main admin reservations](./staticfiles/images/feature_images/admin/admin_reservation_page.png)
 
-**Accounts**
+![Make or edit admin reservations](./staticfiles/images/feature_images/admin/admin_reservation_edit_page.png)
 
-![Main admin accounts]()
+**Accounts User**
 
-![Make or edit admin accounts]()
+- Allows admins to view, create accounts, and/or edit account details as needed.
+
+![Main user accounts](./staticfiles/images/feature_images/admin/admin_user_page.png)
+
+![Make user accounts](./staticfiles/images/feature_images/admin/admin_user_make_page.png)
+
+![Edit user accounts](./staticfiles/images/feature_images/admin/admin_user_edit_page.png)
+
+**Accounts Group**
+
+- Allows admin's to view, create, or deltete group catigories. Used to set a permissions easily to certian accounts and change them as needed based on whats set by superusers or users with permissions.
+
+![Accounts main group page](./staticfiles/images/feature_images/admin/admin_group_page.png)
+
+![Accounts edit group page](./staticfiles/images/feature_images/admin/admin_group_edit_page.png)
 
 ---
 
