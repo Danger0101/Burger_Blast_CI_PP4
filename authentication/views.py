@@ -43,14 +43,15 @@ def register_user(request):
             email = form.cleaned_data.get('email')
             first_name = form.cleaned_data.get('first_name')
             last_name = form.cleaned_data.get('last_name')
-            user_email_subject = "Welcome to Our Website!"
+            user_email_subject = "Welcome Burger Blast!"
             user_email_message = (
                 f"Dear {first_name} {last_name},\n"
                 f"Username: {username},\n\n"
-                "Welcome to Our Website! We're excited to have you onboard.\n"
-                "Thank you for registering with us.\n\n"
+                "Welcome to Burger Blast! We're excited to have you onboard.\n"
+                "Thank you for registering with us.\n"
+                "You can now book reservations on the website.\n\n"
                 "Best regards,\n"
-                "The Team"
+                "The Burger Blast Team"
             )
             send_email(user_email_subject, user_email_message, [email])
 
