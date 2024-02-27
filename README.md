@@ -65,6 +65,10 @@ The site allows users:
 
 (MVP = Minimal Viable Product)
 
+**Sprint Five**
+
+- Bug fixing and testing of all components as a finished product
+
 ## Features
 
 ### Navbar
@@ -390,7 +394,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ### HTML
 
-- checked all non logged in pages with [W3 HTML Validator](https://validator.w3.org/) on all pages with no errors or warnings just info and trailing "/" which is not required.
+- checked all non logged in pages as html urls and logged in pages as raw html with [W3 HTML Validator](https://validator.w3.org/) on all pages with no errors or warnings.
 
 **Index**
 
@@ -415,6 +419,23 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 **Sign Up**
 
 ![Signup HTML w3 Validation Image](./staticfiles/images/html_checks/sign_up_html_check.png)
+
+**My Reservation**
+
+![My Reservation HTML w3 Validation Imag](./staticfiles/images/html_checks/my_reservations_html_check.png)
+
+**Edit Reservatoin**
+
+![Edit Reservation HTML w3 Validation Imag](./staticfiles/images/html_checks/edit_reservations_html_check.png)
+
+**Make Reservatoin**
+
+![Make Reservation HTML w3 Validation Imag](./staticfiles/images/html_checks/make_reservations_html_check.png)
+
+**Change Details**
+
+![Change details HTML w3 Validation Imag](./staticfiles/images/html_checks/change_details_html_check.png)
+
 
 ### Contrast
 
@@ -444,7 +465,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Contrast checker sign up Image](./staticfiles/images/contrast_checks/sign_up_page.png)
 
-## Chrome Lighthouse
+## Lighthouse
 
 ### Index
 
