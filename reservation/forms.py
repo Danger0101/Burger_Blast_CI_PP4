@@ -1,6 +1,3 @@
-'''
-Forms for the reservation app.
-'''
 from datetime import datetime, time, timedelta
 from django import forms
 from django.core.exceptions import ValidationError
@@ -52,6 +49,7 @@ class ReservationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
+        instance = kwargs.get('instance')
         super().__init__(*args, **kwargs)
         self.fields['reservation_date'].widget.attrs['onchange'] = (
             'update_time_choices()'
@@ -60,6 +58,9 @@ class ReservationForm(forms.ModelForm):
             self.fields['first_name'].initial = user.first_name
             self.fields['last_name'].initial = user.last_name
             self.fields['email'].initial = user.email
+        if instance:
+            self.fields['reservation_date'].initial = instance.reservation_datetime.date()
+            self.fields['reservation_time'].initial = instance.reservation_datetime.time()
 
     class Media:
         '''
@@ -129,40 +130,6 @@ class ReservationForm(forms.ModelForm):
 
         if reservation_datetime <= current_datetime + timedelta(minutes=30):
             return False
-        # Get the current date and time in the project's timezone
-        current_datetime = timezone.localtime(timezone.now())
-
-        if reservation_date < current_datetime.date():
-            return False
-
-        if reservation_time is None:
-            return False
-
-        # Get the operating hours of the restaurant
-        opening_time = time(10, 0)  # Restaurant opens at 10:00 AM
-        closing_time = time(22, 0)  # Restaurant closes at 10:00 PM
-
-        # Check if the reservation_time falls within operating hours
-        if not (opening_time <= reservation_time <= closing_time):
-            return False
-
-        # Make reservation_datetime timezone-aware with the project's timezone
-        reservation_datetime = timezone.make_aware(
-            datetime.combine(reservation_date, reservation_time),
-            timezone.get_current_timezone()
-        )
-
-        if reservation_datetime <= current_datetime + timedelta(minutes=30):
-            return False
-
-        # Check if there are any conflicting reservations
-        existing_reservations = Reservation.objects.filter(
-            reservation_datetime=reservation_datetime
-        )
-        for existing_reservation in existing_reservations:
-            if existing_reservation.reservation_datetime == \
-                    reservation_datetime:
-                return False
 
         # If all checks pass, return True
         return True
