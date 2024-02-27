@@ -267,7 +267,7 @@ def send_confirmation_email_to_user(deleted_reservation_details):
     '''
     Send confirmation email to user (if user deletes their own reservation).
     '''
-    subject = 'Reservation Deletion Confirmation'
+    subject = 'Reservation Cancelation Confirmation'
     message = (
         f"Dear {deleted_reservation_details['first_name']}"
         f" {deleted_reservation_details['last_name']},\n\n"
