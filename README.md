@@ -22,59 +22,39 @@ The site allows users:
 
 - [User Stories & Sprints](#user-stories)
 
-**[Features](#features)**
+|        **[Features](#features)**        |                **[Testing](#testing)**                |
+| :-------------------------------------: | :---------------------------------------------------: |
+|            [Navbar](#navbar)            |          - [Manual Testing](#manual-testing)          |
+|             [Index](#index)             |    [Automated Testing](#automated-testing-scripts)    |
+|          [About Us](#about-us)          | [Bugs & Issues Encounterd](#bugs--issues-encountered) |
+|           [Sign Up](#signup)            |                                                       |
+|           [Sign in](#sign-in)           |                                                       |
+|    [Change Details](#change-details)    |                                                       |
+|   [My Reservations](#my-reservations)   |                                                       |
+| [Make Reservations](#make-reservations) |                                                       |
+| [Edit Reservations](#edit-reservations) |                                                       |
+|              [Menu](#menu)              |                                                       |
+|       [Contact Use](#contact-us)        |                                                       |
+|            [Footer](#footer)            |                                                       |
+|       [Error Pages](#error-pages)       |                                                       |
+|      [Django Admin](#django-admin)      |                                                       |
 
-- [Navbar](#navbar)
-- [Index](#index)
-- [About Us](#about-us)
-- [Sign Up](#signup)
-- [Sign in](#sign-in)
-- [Change Details](#change-details)
-- [My Reservations](#my-reservations)
-- [Make Reservations](#make-reservations)
-- [Edit Reservations](#edit-reservations)
-- [Menu](#menu)
-- [Contact Use](#contact-us)
-- [Footer](#footer)
-- [Error Pages](#error-pages)
-- [Django Admin](#django-admin)
+| **[Validation Testing](#validation-testing)** |      **[Lighthouse](#lighthouse)**      |
+| :-------------------------------------------: | :-------------------------------------: |
+|               [Python](#python)               |          [Index LH](#index-lh)          |
+|           [JavaScript](#javascript)           |          [About LH](#about-lh)          |
+|                  [CSS](#css)                  |          [Admin LH](#admin-lh)          |
+|                 [HTML](#html)                 |   [Reservations LH](#reservations-lh)   |
+|             [Contrast](#contrast)             |           [Menu LH](#menu-lh)           |
+|                                               |         [Signup LH](#signup-lh)         |
+|                                               |        [Sign in LH](#sign-in-lh)        |
+|                                               | [Change Details LH](#change-details-lh) |
 
-**[Testing](#testing)**
-
-- [Manual Testing](#manual-testing)
-- [Automated Testing](#automated-testing-scripts)
-- [Bugs & Issues Encounterd](#bugs--issues-encountered)
-
-**[Validation Testing](#validation-testing)**
-
-- [Python](#python)
-- [JavaScript](#javascript)
-- [CSS](#css)
-- [HTML](#html)
-- [Contrast](#contrast)
-
-**[Lighthouse](#lighthouse)**
-
-- [Index LH](#index-lh)
-- [About LH](#about-lh)
-- [Admin LH](#admin-lh)
-- [Reservations LH](#reservations-lh)
-- [Menu LH](#menu-lh)
-- [Signup LH](#signup-lh)
-- [Sign in LH](#sign-in-lh)
-- [Change Details LH](#change-details-lh)
-
-**[Setup](#setup)**
-
-- [Database](#database)
-- [Cloudinary](#cloudinary)
-- [Deployment](#deployment)
-
-**More**
-
-- [Wireframes](#wireframes)
-- [Credits](#credits)
-- [Future Features](#future-feature-ideas)
+|    **[Setup](#setup)**    |                 **More**                 |
+| :-----------------------: | :--------------------------------------: |
+|   [Database](#database)   |        [Wireframes](#wireframes)         |
+| [Cloudinary](#cloudinary) |           [Credits](#credits)            |
+| [Deployment](#deployment) | [Future Features](#future-feature-ideas) |
 
 ## User Stories
 
