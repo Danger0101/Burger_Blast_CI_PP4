@@ -18,6 +18,64 @@ The site allows users:
 
 ---
 
+## Table of contents
+
+- [User Stories & Sprints](#user-stories)
+
+**[Features](#features)**
+
+- [Navbar](#navbar)
+- [Index](#index)
+- [About Us](#about-us)
+- [Sign Up](#signup)
+- [Sign in](#sign-in)
+- [Change Details](#change-details)
+- [My Reservations](#my-reservations)
+- [Make Reservations](#make-reservations)
+- [Edit Reservations](#edit-reservations)
+- [Menu](#menu)
+- [Contact Use](#contact-us)
+- [Footer](#footer)
+- [Error Pages](#error-pages)
+- [Django Admin](#django-admin)
+
+**[Testing](#testing)**
+
+- [Manual Testing](#manual-testing)
+- [Automated Testing](#automated-testing-scripts)
+- [Bugs & Issues Encounterd](#bugs--issues-encountered)
+
+**[Validation Testing](#validation-testing)**
+
+- [Python](#python)
+- [JavaScript](#javascript)
+- [CSS](#css)
+- [HTML](#html)
+- [Contrast](#contrast)
+
+**[Lighthouse](#lighthouse)**
+
+- [Index LH](#index-lh)
+- [About LH](#about-lh)
+- [Admin LH](#admin-lh)
+- [Reservations LH](#reservations-lh)
+- [Menu LH](#menu-lh)
+- [Signup LH](#signup-lh)
+- [Sign in LH](#sign-in-lh)
+- [Change Details LH](#change-details-lh)
+
+**[Setup](#setup)**
+
+- [Database](#database)
+- [Cloudinary]()
+- [Deployment](#deployment)
+
+**More**
+
+- [Wireframes](#wireframes)
+- [Credits](#credits)
+- [Future Features](#future-feature-ideas)
+
 ## User Stories
 
 ** Sprint One**
@@ -283,7 +341,7 @@ The site allows users:
 
 ## Testing
 
-**Manual Testing**
+### Manual Testing
 
 |                 What test was completed                  | Passed? |           Other information            |
 | :------------------------------------------------------: | :-----: | :------------------------------------: |
@@ -323,7 +381,7 @@ The site allows users:
 |      Booking 20 or less returns value of 20 or less      |   Yes   |                                        |
 |      Booking 21 or more returns value of 20 no more      |   Yes   |                                        |
 
-**Automated Testing Scripts**
+### Automated Testing Scripts
 
 - Must use local Django database for the django tests
 
@@ -341,7 +399,7 @@ The site allows users:
 |      test_menu_remove.py       |           python manage.py test meals.test_menu_remove           |
 | tests_authentication_basics.py | python manage.py test authentication.tests_authentication_basics |
 
-### Bugs/Issues Encountered
+### Bugs & Issues Encountered
 
 | Bugs/Issues Encountered                                                                    |                        How problem was fixed or ammended                         | Fixed? |
 | ------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------: | :----: |
@@ -489,7 +547,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ## Lighthouse
 
-### Index
+### Index LH
 
 **Chrome lighthouse desktop**
 
@@ -499,7 +557,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap index lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/Index_lh_mobile.png)
 
-### About
+### About LH
 
 **Chrome lighthouse desktop**
 
@@ -509,7 +567,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/aboutus_lh_mobile.png)
 
-### Admin
+### Admin LH
 
 **Admin Login lighthouse desktop**
 
@@ -527,7 +585,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_lh_mobile.png)
 
-### Reservations
+### Reservations LH
 
 **Edit Reservation lighthouse desktop**
 
@@ -553,7 +611,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_mobile.png)
 
-### Menu
+### Menu LH
 
 **Lighthouse desktop**
 
@@ -563,7 +621,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/menu_lh_mobile.png)
 
-### Signup
+### Signup LH
 
 **Lighthouse desktop**
 
@@ -573,7 +631,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signup_lh_mobile.png)
 
-### Sign In
+### Sign In LH
 
 **ighthouse desktop**
 
@@ -583,7 +641,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signin_lh_mobile.png)
 
-### Change Details
+### Change Details LH
 
 **lighthouse desktop**
 
@@ -594,6 +652,8 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/update_details_lh_mobile.png)
 
 ---
+
+## Setup
 
 ### Database
 
@@ -668,11 +728,66 @@ python manage.py migrate
 
 ---
 
-## Deployment
+### Cloudinary
+
+**Creating a Cloudinary Account**
+
+1. **Sign Up for Cloudinary:** Go to [Cloudinary's website](https://cloudinary.com/) and sign up for a new account.
+2. **Verify Your Email:** Follow the instructions in the email sent to you to verify your email address.
+
+**Integrating Cloudinary with Django**
+
+1. **Install Cloudinary Library:** Run the following command in your terminal to install the Cloudinary Python library:
+
+   |    run in terminal     |
+   | :--------------------: |
+   | pip install cloudinary |
+
+2. **Configure Settings:** In your Django project's settings.py file, add the following configurations:
+
+   **.env**
+
+|              Line to enter               |
+| :--------------------------------------: |
+|    CLOUDINARY_API_KEY = Api key value    |
+| CLOUDINARY_API_SECRET = Api secret value |
+| CLOUDINARY_CLOUD_NAME = Cloudinary Name  |
+
+(Replace all after **"="** with your information)
+
+**Heroku Cofig Variables**
+
+|          Key          |      Value       |
+| :-------------------: | :--------------: |
+|  CLOUDINARY_API_KEY   |  Api key value   |
+| CLOUDINARY_API_SECRET | Api secret value |
+| CLOUDINARY_CLOUD_NAME | Cloudinary Name  |
+
+(Replace all **Values** with your information)
+
+3. **Set Up Cloudinary Storage Backend:** Add the following line to settings.py to use Cloudinary as the storage backend for media files:
+
+|                             Add to settings.py                             |
+| :------------------------------------------------------------------------: |
+| DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage' |
+
+4. **Accessing Cloudinary URLs:** Whenever you upload media files in your Django application, they will automatically be stored in Cloudinary. You can access the URLs of these files to display them in your application.
+
+5. **Optional: Resize and Manipulate Images:** Cloudinary provides various transformation options for images. You can resize, crop, and apply filters to images using Cloudinary's URL-based transformations.
+
+6. **Testing Integration:** Upload a sample media file through your Django application and verify that it gets stored in Cloudinary.
+
+7. **Further Customizations:** Explore [Cloudinary's documentation](https://cloudinary.com/documentation) for more advanced features and customizations, such as video processing, secure URLs, and transformation options.
+
+8. **Congradulations you should be all set up**
+
+---
+
+### Deployment
 
 Used Heroku to deploy the website. You can [Visit Live Site by clicking here](https://burger-blast-ci-2024-63403f4a3896.herokuapp.com/)
 
-### How to deploy to heroku:
+#### How to deploy to heroku:
 
 1. **Run Migrations:** Once your project is deployed, you'll need to run any pending database migrations. You can do this using Heroku's web-based console or by running commands in your local terminal.
 2. **Create a Superuser:** If your project uses Django's admin interface, you may want to create a superuser account on Heroku. You can do this by accessing your app's shell through the Heroku dashboard and running the createsuperuser command.
@@ -687,15 +802,18 @@ Used Heroku to deploy the website. You can [Visit Live Site by clicking here](ht
 11. **Set Up Environment Variables:** Now under settings tab set any necessary environment variables for this django project. See chart below for needed key and values.
 
 **Heroku Cofig Variables**
-| Key | Value |
-|:---:|:-----:|
-| DISABLE_COLLECTSTATIC | 1 |
-| DATABASE_URL | postgres database url |
-| DJANGO_SECRET_KEY | Django secret key for the project |
-| SENDGRID_API_KEY | sendgrid api key |
-| CLOUDINARY_API_KEY | Api key value |
-| CLOUDINARY_API_SECRET | Api secret value |
-| CLOUDINARY_CLOUD_NAME | Cloudinary Name |
+
+|          Key          |               Value               |
+| :-------------------: | :-------------------------------: |
+| DISABLE_COLLECTSTATIC |                 1                 |
+|     DATABASE_URL      |       postgres database url       |
+|   DJANGO_SECRET_KEY   | Django secret key for the project |
+|   SENDGRID_API_KEY    |         sendgrid api key          |
+|  CLOUDINARY_API_KEY   |           Api key value           |
+| CLOUDINARY_API_SECRET |         Api secret value          |
+| CLOUDINARY_CLOUD_NAME |          Cloudinary Name          |
+
+(Replace all **Values** with your information)
 
 12. **Deploy Your Project:** Back under deploy tab on Heroku scroll down to manual deploy and choose the branch you wish to deploy and hit button "Deploy Branch" wait for the success and trouble shoot if needed.
 
