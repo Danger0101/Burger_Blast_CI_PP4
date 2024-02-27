@@ -105,9 +105,13 @@ The site allows users:
 
 ![Signup Page](./staticfiles/images/feature_images/signup_page.png)
 
-**Signup Email**
+**Signup Email Customer**
 
-![Signup Email Image](./staticfiles/images/burger_blast_email_images)
+![Signup Email Image](./staticfiles/images/burger_blast_email_images/account_creation_email.png)
+
+**Signup Email Restaurant**
+
+![Signup Email Image](./staticfiles/images/burger_blast_email_images/account_creation_restaurant_email.png)
 
 ---
 
@@ -153,7 +157,7 @@ The site allows users:
 
 **Make Reservation Email**
 
-![Signup Email Image](./staticfiles/images/burger_blast_email_images/reservation_confirmation_email.png)
+![Make Reservation Email Image](./staticfiles/images/burger_blast_email_images/reservation_confirmation_email.png)
 
 ---
 
@@ -173,7 +177,7 @@ The site allows users:
 
 **User Cancel Reservation Email**
 
-![User Cancel Email Image](./staticfiles/images/burger_blast_email_images)
+![User Cancel Email Image](./staticfiles/images/burger_blast_email_images/reservation_cancel_customer_email.png)
 
 ---
 
@@ -190,6 +194,8 @@ The site allows users:
 - This page allows a user to fill out a form that will then be emailed to the restaurant.
 
 ![Contact us Page](./staticfiles/images/feature_images/contact_us_page.png)
+
+![Example contact email recieved](./staticfiles/images/burger_blast_email_images/contact_form_email.png)
 
 ---
 
@@ -223,7 +229,27 @@ The site allows users:
 
 - Django admin is a powerful tool designed to make managing a website easier for staff members. It provides a user-friendly interface where staff can easily add, edit, or delete content without needing technical skills. Staff members can log in and access a dashboard that gives them control over various aspects of the website, such as managing user accounts, updating product listings, posting articles, and more. The admin panel organizes information neatly, allowing staff to navigate through different sections effortlessly. It's like having a control center for the website, making it simple for staff members to keep everything running smoothly and up-to-date.
 
-![]()
+![Admin login image]()
+
+![Admin site logged in image]()
+
+**Meals**
+
+![Main admin meals]()
+
+![Make or edit admin meals]()
+
+**Reservations**
+
+![Main admin reservations]()
+
+![Make or edit admin reservations]()
+
+**Accounts**
+
+![Main admin accounts]()
+
+![Make or edit admin accounts]()
 
 ---
 
@@ -282,14 +308,15 @@ The site allows users:
 
 ### Bugs/Issues Encountered
 
-|                                  Bugs/Issues Encountered                                   |                              How problem was fixed                               | Fixed Y(yes)/N(no) |
-| :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :----------------: |
-|         Enabling user sign-up with email verification due to email sending issues.         |                 Removed the verification prior to making it live                 |         Y          |
-|                         Getting images to load into the menu items                         |              Removed due to time constraint may add back in future               |         Y          |
-|                          Getting static files to work as intended                          |         Tried different code variations, settled on one store location.          |         Y          |
-|                     Getting static file js to load for menu selection                      |              added it in script tags instead as its a small script               |         Y          |
-|       Users could set any date or time in making reservation whether future or past        | JS and Python ensure bookings within opening hours, No same-day online bookings. |         Y          |
-| If a user attempts to book two reservations for the same date and time, it won't be saved. |                               Not fixed currently                                |         N          |
+|                                  Bugs/Issues Encountered                                   |                              How problem was fixed                               | Fixed? |
+| :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: | :----: |
+|         Enabling user sign-up with email verification due to email sending issues.         |                 Removed the verification prior to making it live                 |  Yes   |
+|                         Getting images to load into the menu items                         |              Removed due to time constraint may add back in future               |  Yes   |
+|                          Getting static files to work as intended                          |         Tried different code variations, settled on one store location.          |  Yes   |
+|                     Getting static file js to load for menu selection                      |              added it in script tags instead as its a small script               |  Yes   |
+|       Users could set any date or time in making reservation whether future or past        | JS and Python ensure bookings within opening hours, No same-day online bookings. |  Yes   |
+| If a user attempts to book two reservations for the same date and time, it won't be saved. |                               Not fixed currently                                |   No   |
+|                Show password disapearing on certian browsers such as chrome                |                               Not fixed currently                                |   No   |
 
 ---
 
@@ -416,71 +443,71 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ### Admin
 
-**Admin Login Chrome lighthouse desktop**
+**Admin Login lighthouse desktop**
 
 ![Screencap index.html lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_desktop.png)
 
-**Admin Login Chrome mobile lighthouse**
+**Admin Login mobile lighthouse**
 
 ![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_mobile.png)
 
-**Admin Pannel Chrome lighthouse desktop**
+**Admin Pannel lighthouse desktop**
 
 ![Screencap index.html lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_lh_desktop.png)
 
-**Admin Pannel Chrome mobile lighthouse**
+**Admin Pannel mobile lighthouse**
 
 ![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_lh_mobile.png)
 
 ### Reservations
 
-**Edit Reservation Chrome lighthouse desktop**
+**Edit Reservation lighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_desktop.png)
 
-**Edit Reservation Chrome mobile lighthouse**
+**Edit Reservation mobile lighthouse**
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_mobile.png)
 
-**Make Reservation Chrome lighthouse desktop**
+**Make Reservation lighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_desktop.png)
 
-**Make Reservation Chrome mobile lighthouse**
+**Make Reservation mobile lighthouse**
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_mobile.png)
 
-**My Reservation Chrome lighthouse desktop**
+**My Reservation lighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_desktop.png)
 
-**My Reservation Chrome mobile lighthouse**
+**My Reservation mobile lighthouse**
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_mobile.png)
 
 ### Menu
 
-**Chrome lighthouse desktop**
+**Lighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/menu_lh_desktop.png)
 
-**Chrome mobile lighthouse**
+**Lighthouse mobile**
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/menu_lh_mobile.png)
 
 ### Signup
 
-**Chrome lighthouse desktop**
+**Lighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signup_lh_desktop.png)
 
-**Chrome mobile lighthouse**
+**Lighthouse mobile**
 
 ![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signup_lh_mobile.png)
 
 ### Sign In
 
-**Chrome lighthouse desktop**
+**ighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signin_lh_desktop.png)
 
@@ -490,7 +517,7 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ### Change Details
 
-**Chrome lighthouse desktop**
+**lighthouse desktop**
 
 ![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/update_details_lh_desktop.png)
 
@@ -670,3 +697,4 @@ Used Heroku to deploy the website. You can [Visit Live Site by clicking here](ht
 |   Users Delete accounts    |    Nice to have     |
 |   Reset/Forgot Password    |    Nice to have     |
 | Online Ordering/Deliveries |    Nice to have     |
+|   Better looking emails    |    Nice to have     |
