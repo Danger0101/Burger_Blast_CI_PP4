@@ -15,9 +15,13 @@
         <form method="post" action="{% url 'account:login' %}" class="mb-2">
           {% csrf_token %}
           <div class="mb-3">
-            <label for="username" class="form-label authentication-sub-title"
-              >Username</label
+            <label
+              for="username"
+              class="form-label authentication-sub-title"
+              aria-describedby="Username"
             >
+              Username
+            </label>
             <input
               type="text"
               class="form-control"
@@ -28,9 +32,13 @@
             />
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label authentication-sub-title"
-              >Password</label
+            <label
+              for="password"
+              class="form-label authentication-sub-title"
+              aria-label="Password"
             >
+              Password
+            </label>
             <input
               type="password"
               class="form-control"
@@ -41,7 +49,13 @@
             />
           </div>
           <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              aria-label="Log In Button"
+            >
+              Log In
+            </button>
           </div>
         </form>
       </div>

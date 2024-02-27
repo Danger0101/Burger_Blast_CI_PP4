@@ -15,8 +15,13 @@
               class="form-control"
               name="q"
               placeholder="Search reservations..."
+              aria-label="Search Reservations"
             />
-            <button class="btn btn-outline-secondary" type="submit">
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              aria-label="Submit Search"
+            >
               Search
             </button>
           </div>
@@ -69,11 +74,13 @@
                   <a
                     href="{% url 'reservation:delete_reservation' reservation.id %}"
                     class="btn btn-danger btn-sm action-btns"
+                    aria-label="Delete Reservation"
                     >Delete</a
                   >
                   <a
                     href="{% url 'reservation:edit_reservation' reservation.id %}"
                     class="btn btn-primary btn-sm action-btns"
+                    aria-label="Edit Reservation"
                     >Edit</a
                   >
                 </td>
@@ -128,6 +135,7 @@
           <a
             href="{% url 'reservation:make_reservation' %}"
             class="btn btn-success"
+            aria-label="Make a Reservation"
             >Make a Reservation</a
           >
         </div>
