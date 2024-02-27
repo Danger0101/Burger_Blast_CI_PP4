@@ -64,3 +64,9 @@ function update_time_choices() {
         timeField.options.add(option);
     }
 }
+
+// Call update_time_choices() when the page loads
+window.onload = update_time_choices;
+
+// Call update_time_choices() when the date field value changes
+document.getElementById("id_reservation_date").addEventListener("change", update_time_choices);
