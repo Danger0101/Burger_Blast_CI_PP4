@@ -285,38 +285,43 @@ The site allows users:
 
 **Manual Testing**
 
-|                                                     What test was completed                                                      | Passed? Y(yes)/N(no) |           Other information           |
-| :------------------------------------------------------------------------------------------------------------------------------: | :------------------: | :-----------------------------------: |
-|                                                   Make a super user (Manager)                                                    |          Y           |                                       |
-|                                                      Make a staff member ()                                                      |          Y           |                                       |
-|                                     Sign up as a customer/user (Jane.Doe, John.Doe, Jon.Doe)                                     |          Y           |                                       |
-|                                                   Login to site as a superuser                                                   |          Y           |                                       |
-|                                                     Login to site as a staff                                                     |          Y           |                                       |
-|                                                 Login to site as a customer/user                                                 |          Y           |                                       |
-|                                                  Log out of site as a superuser                                                  |          Y           |                                       |
-|                                                    Log out of site as a staff                                                    |          Y           |                                       |
-|                                                Log out of site as a customer/user                                                |          Y           |                                       |
-|                                              Login to Django admin as customer/user                                              |          Y           |  Only staff can log in successfully   |
-|                                                Login to Django admin as superuser                                                |          Y           |  Only staff can log in successfully   |
-|                                                  Login to Django admin as staff                                                  |          Y           |  Only staff can log in successfully   |
-|                                               Log out of Django admin as superuser                                               |          Y           |                                       |
-|                                                 Log out of Django admin as staff                                                 |          Y           |                                       |
-|                                         Successfully change any users data on main site                                          |          Y           |                                       |
-|                                         Successfully change any users data on admin site                                         |          Y           |  Can only be done as a satff member   |
-|                                               Make reservation as a customer/user                                                |          Y           |                                       |
-|                                                 Make reservation as a superuser                                                  |          Y           |                                       |
-|                                                    Make reservation as staff                                                     |          Y           |                                       |
-|                                               Edit reservation as a customer/user                                                |          Y           |                                       |
-|                                                 Edit reservation as a superuser                                                  |          Y           |                                       |
-|                                                    Edit reservation as staff                                                     |          Y           |                                       |
-|                                              Delete reservation as a customer/user                                               |          Y           |                                       |
-|                                                Delete reservation as a superuser                                                 |          Y           |                                       |
-|                                                   Delete reservation as staff                                                    |          Y           |                                       |
-|                                          Edit reservation as a superuser on admin site                                           |          Y           |                                       |
-|                                             Edit reservation as staff on admin site                                              |          Y           |                                       |
-|                                         Delete reservation as a superuser on admin site                                          |          Y           |                                       |
-|                                            Delete reservation as staff on admin site                                             |          Y           |                                       |
-| Verify vanilla validation settings to prevent users from making reservations outside normal constraints without malicious intent |          Y           | Unable to book outside of constraints |
+|                 What test was completed                  | Passed? |           Other information            |
+| :------------------------------------------------------: | :-----: | :------------------------------------: |
+|               Make a super user (Manager)                |   Yes   |                                        |
+|                  Make a staff member ()                  |   Yes   |                                        |
+| Sign up as a customer/user (Jane.Doe, John.Doe, Jon.Doe) |   Yes   |                                        |
+|               Login to site as a superuser               |   Yes   |                                        |
+|                 Login to site as a staff                 |   Yes   |                                        |
+|             Login to site as a customer/user             |   Yes   |                                        |
+|              Log out of site as a superuser              |   Yes   |                                        |
+|                Log out of site as a staff                |   Yes   |                                        |
+|            Log out of site as a customer/user            |   Yes   |                                        |
+|          Login to Django admin as customer/user          |   Yes   |   Only staff can log in successfully   |
+|            Login to Django admin as superuser            |   Yes   |   Only staff can log in successfully   |
+|              Login to Django admin as staff              |   Yes   |   Only staff can log in successfully   |
+|           Log out of Django admin as superuser           |   Yes   |                                        |
+|             Log out of Django admin as staff             |   Yes   |                                        |
+|     Successfully change any users data on main site      |   Yes   |                                        |
+|     Successfully change any users data on admin site     |   Yes   |   Can only be done as a satff member   |
+|           Make reservation as a customer/user            |   Yes   |                                        |
+|             Make reservation as a superuser              |   Yes   |                                        |
+|                Make reservation as staff                 |   Yes   |                                        |
+|           Edit reservation as a customer/user            |   Yes   |                                        |
+|             Edit reservation as a superuser              |   Yes   |                                        |
+|                Edit reservation as staff                 |   Yes   |                                        |
+|          Delete reservation as a customer/user           |   Yes   |                                        |
+|            Delete reservation as a superuser             |   Yes   |                                        |
+|               Delete reservation as staff                |   Yes   |                                        |
+|      Edit reservation as a superuser on admin site       |   Yes   |                                        |
+|         Edit reservation as staff on admin site          |   Yes   |                                        |
+|     Delete reservation as a superuser on admin site      |   Yes   |                                        |
+|        Delete reservation as staff on admin site         |   Yes   |                                        |
+|     Check no more then 14 day's into future booking      |   Yes   | Unable to book outside of constraints  |
+|      Check booking time frame ends 2h befor closing      |   Yes   | Unable to book outside of constraints  |
+|        Multiple users can book same day and time         |   Yes   |                                        |
+|     Cant book over 20 people in a single reservation     |   Yes   | Added contraint to reduce cancelations |
+|      Booking 20 or less returns value of 20 or less      |   Yes   |                                        |
+|      Booking 21 or more returns value of 20 no more      |   Yes   |                                        |
 
 **Automated Testing Scripts**
 
@@ -404,7 +409,6 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 ![arrows.js; js check](./staticfiles/images/js_checks/arrows_script_check.png)
 
-
 ### CSS
 
 - checked my custom css with [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) direct input; completed with no issues found.
@@ -454,7 +458,6 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 **Change Details**
 
 ![Change details HTML w3 Validation Imag](./staticfiles/images/html_checks/change_details_html_check.png)
-
 
 ### Contrast
 
