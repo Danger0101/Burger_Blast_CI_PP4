@@ -283,6 +283,8 @@ The site allows users:
 
 ## Testing
 
+**Manual Testing**
+
 |                                                     What test was completed                                                      | Passed? Y(yes)/N(no) |           Other information           |
 | :------------------------------------------------------------------------------------------------------------------------------: | :------------------: | :-----------------------------------: |
 |                                                   Make a super user (Manager)                                                    |          Y           |                                       |
@@ -385,6 +387,23 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 |             reservation\models.py             |   All    |          None          |
 |              reservation\urls.py              |   All    |          None          |
 |             reservation\views.py              |   All    |          None          |
+
+## Javascript
+
+- All my custom js scripts were run though [jshint](https://jshint.com/).
+
+**reservation_checks.js**
+
+![reservation_checks.js; js check](./staticfiles/images/js_checks/reservation_script_check.png)
+
+**meals.js**
+
+![meals.js; js check](./staticfiles/images/js_checks/menu_script_check.png)
+
+**arrows.js**
+
+![arrows.js; js check](./staticfiles/images/js_checks/arrows_script_check.png)
+
 
 ### CSS
 
