@@ -1,4 +1,5 @@
-{% extends 'about/base.html' %} {% block content %}
+{% extends 'about/base.html' %}
+{% block content %}
 <div class="container">
   <div class="row mt-4 justify-content-center">
     <div class="col-lg-6 col-md-8 col-12">
@@ -8,49 +9,25 @@
           {% csrf_token %}
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="first_name"
-                aria-label="First name"
-              >
-                {{ form.first_name.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">First Name:</span>
             </div>
             <div class="row">{{ form.first_name }}</div>
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="last_name"
-                aria-label="Last name"
-              >
-                {{ form.last_name.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Last Name:</span>
             </div>
             <div class="row">{{ form.last_name }}</div>
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="email"
-                aria-label="Email address"
-              >
-                {{ form.email.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Email:</span>
             </div>
             <div class="row">{{ form.email }}</div>
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="reservation_date"
-                aria-label="Reservation date"
-              >
-                {{ form.reservation_date.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Reservation Date:</span>
             </div>
             <div class="row">{{ form.reservation_date }}</div>
             <div class="row">
@@ -59,13 +36,7 @@
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="reservation_time"
-                aria-label="Reservation time"
-              >
-                {{ form.reservation_time.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Reservation Time:</span>
             </div>
             <div class="row">{{ form.reservation_time }}</div>
             <div class="row">
@@ -74,48 +45,24 @@
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="reservation_duration"
-                aria-label="Party size"
-              >
-                {{ form.party_size.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Party Size:</span>
             </div>
             <div class="row">{{ form.party_size }}</div>
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="phone_number"
-                aria-label="Phone number"
-              >
-                {{ form.phone_number.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Phone Number:</span>
             </div>
             <div class="row">{{ form.phone_number }}</div>
           </div>
           <div class="form-group text-center mb-3">
             <div class="row">
-              <label
-                class="reservation-form-sub-title"
-                for="special_requests"
-                aria-label="Special requests"
-              >
-                {{ form.special_requests.label_tag }}
-              </label>
+              <span class="reservation-form-sub-title">Special Requests:</span>
             </div>
             <div class="row">{{ form.special_requests }}</div>
           </div>
           <div class="d-flex justify-content-end">
-            <button
-              type="submit"
-              class="btn btn-primary mt-3"
-              aria-label="Submit Reservation Button"
-            >
-              Submit Reservation
-            </button>
+            <button type="submit" class="btn btn-primary mt-3" aria-label="Submit Reservation Button">Submit Reservation</button>
           </div>
         </form>
       </div>

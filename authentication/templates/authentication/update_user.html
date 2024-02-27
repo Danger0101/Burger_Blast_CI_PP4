@@ -1,4 +1,5 @@
-{% extends 'about/base.html' %} {% block content %}
+{% extends 'about/base.html' %}
+{% block content %}
 <div class="container">
   <div class="row mt-4 justify-content-center">
     <div class="col-lg-6 col-md-8 col-12">
@@ -6,38 +7,31 @@
         <h2 class="mb-4 authentication-title">Change Details</h2>
 
         {% for message in messages %}
-        <div
-          class="alert alert-{{ message.tags }} alert-dismissible fade show"
-          role="alert"
-        >
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
           {{ message }}
         </div>
         {% endfor %}
 
         <form method="post" action="{% url 'account:update' %}">
           {% csrf_token %}
-          <label
-            class="reg-sub-title"
-            for="{{ user_form.username.id_for_label }}"
-            aria-label="Username"
-          >
-            Username:
-          </label>
-          {{ user_form.username }}
-          <div class="pass-req-txt">
-            Required. 150 characters or fewer. Letters, digits and @/./+/-/_
-            only.
+          <div class="form-group">
+            <label class="reg-sub-title" for="{{ user_form.username.id_for_label }}" aria-label="Username">
+              Username:
+            </label>
+            {{ user_form.username }}
+            <div id="id_username_helptext" class="pass-req-txt">
+              Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+              only.
+            </div>
           </div>
           <br />
-          <label class="reg-sub-title" for="{{ user_form.email.id_for_label }}"
-            >Email:</label
-          >
-          {{ user_form.email }}
+          <div class="form-group">
+            <label class="reg-sub-title" for="{{ user_form.email.id_for_label }}">Email:</label>
+            {{ user_form.email }}
+          </div>
           <br />
           <div class="d-flex justify-content-end">
-            <button class="btn btn-primary" type="submit" name="update_info">
-              Update Information
-            </button>
+            <button class="btn btn-primary" type="submit" name="update_info">Update Information</button>
           </div>
         </form>
         <hr>
@@ -45,63 +39,27 @@
         <form method="post" action="{% url 'account:update' %}">
           {% csrf_token %}
           <div class="form-group">
-            <label
-              class="reg-sub-title"
-              for="id_old_password"
-              aria-label="Old Password"
-            >
-              Old Password:
-            </label>
+            <label class="reg-sub-title" for="id_old_password" aria-label="Old Password">Old Password:</label>
             {{ password_form.old_password }}
           </div>
           <div class="form-group">
-            <label
-              class="reg-sub-title"
-              for="id_new_password1"
-              aria-label="New Password"
-            >
-              New Password:
-            </label>
+            <label class="reg-sub-title" for="id_new_password1" aria-label="New Password">New Password:</label>
             {{ password_form.new_password1 }}
             <div class="pass-req-txt">
               <ul class="pass-list">
-                <li>
-                  Your password <strong>can’t</strong> be too similar to your
-                  other personal information.
-                </li>
-                <li>
-                  Your password <strong>must</strong> contain at least 8
-                  characters.
-                </li>
-                <li>
-                  Your password <strong>can’t</strong> be a commonly used
-                  password.
-                </li>
-                <li>
-                  Your password <strong>can’t</strong> be entirely numeric.
-                </li>
+                <li>Your password <strong>can’t</strong> be too similar to your other personal information.</li>
+                <li>Your password <strong>must</strong> contain at least 8 characters.</li>
+                <li>Your password <strong>can’t</strong> be a commonly used password.</li>
+                <li>Your password <strong>can’t</strong> be entirely numeric.</li>
               </ul>
             </div>
           </div>
           <div class="form-group">
-            <label
-              class="reg-sub-title"
-              for="id_new_password2"
-              aria-label="Confirm New Password"
-            >
-              Confirm New Password:
-            </label>
+            <label class="reg-sub-title" for="id_new_password2" aria-label="Confirm New Password">Confirm New Password:</label>
             {{ password_form.new_password2 }}
           </div>
           <div class="d-flex justify-content-end change-pass-btn">
-            <button
-              class="btn btn-primary"
-              type="submit"
-              name="change_password"
-              aria-label="Change Password Button"
-            >
-              Change Password
-            </button>
+            <button class="btn btn-primary" type="submit" name="change_password" aria-label="Change Password Button">Change Password</button>
           </div>
         </form>
       </div>
