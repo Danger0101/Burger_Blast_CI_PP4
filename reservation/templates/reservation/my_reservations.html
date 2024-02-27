@@ -74,15 +74,17 @@
                   <a
                     href="{% url 'reservation:delete_reservation' reservation.id %}"
                     class="btn btn-danger btn-sm action-btns"
-                    aria-label="Delete Reservation"
-                    >Delete</a
+                    aria-label="Cancel Reservation"
                   >
+                    Cancel
+                  </a>
                   <a
                     href="{% url 'reservation:edit_reservation' reservation.id %}"
                     class="btn btn-primary btn-sm action-btns"
                     aria-label="Edit Reservation"
-                    >Edit</a
                   >
+                    Edit
+                  </a>
                 </td>
               </tr>
             </tbody>
