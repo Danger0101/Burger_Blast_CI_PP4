@@ -22,39 +22,30 @@ The site allows users:
 
 - [User Stories & Sprints](#user-stories)
 
-|        **[Features](#features)**        |                **[Testing](#testing)**                |
-| :-------------------------------------: | :---------------------------------------------------: |
-|            [Navbar](#navbar)            |          - [Manual Testing](#manual-testing)          |
-|             [Index](#index)             |    [Automated Testing](#automated-testing-scripts)    |
-|          [About Us](#about-us)          | [Bugs & Issues Encounterd](#bugs--issues-encountered) |
-|           [Sign Up](#signup)            |                                                       |
-|           [Sign in](#sign-in)           |                                                       |
-|    [Change Details](#change-details)    |                                                       |
-|   [My Reservations](#my-reservations)   |                                                       |
-| [Make Reservations](#make-reservations) |                                                       |
-| [Edit Reservations](#edit-reservations) |                                                       |
-|              [Menu](#menu)              |                                                       |
-|       [Contact Use](#contact-us)        |                                                       |
-|            [Footer](#footer)            |                                                       |
-|       [Error Pages](#error-pages)       |                                                       |
-|      [Django Admin](#django-admin)      |                                                       |
+|        **[Features](#features)**        |                **[Testing](#testing)**                |      **[Lighthouse](#lighthouse)**      |
+| :-------------------------------------: | :---------------------------------------------------: | :-------------------------------------: |
+|            [Navbar](#navbar)            |          - [Manual Testing](#manual-testing)          |          [Index LH](#index-lh)          |
+|             [Index](#index)             |    [Automated Testing](#automated-testing-scripts)    |          [About LH](#about-lh)          |
+|          [About Us](#about-us)          | [Bugs & Issues Encounterd](#bugs--issues-encountered) |          [Admin LH](#admin-lh)          |
+|           [Sign Up](#signup)            |                                                       |   [Reservations LH](#reservations-lh)   |
+|           [Sign in](#sign-in)           |                                                       |           [Menu LH](#menu-lh)           |
+|    [Change Details](#change-details)    |                                                       |         [Signup LH](#signup-lh)         |
+|   [My Reservations](#my-reservations)   |                                                       |        [Sign in LH](#sign-in-lh)        |
+| [Make Reservations](#make-reservations) |                                                       | [Change Details LH](#change-details-lh) |
+| [Edit Reservations](#edit-reservations) |                                                       |                                         |
+|              [Menu](#menu)              |                                                       |                                         |
+|       [Contact Use](#contact-us)        |                                                       |                                         |
+|            [Footer](#footer)            |                                                       |                                         |
+|       [Error Pages](#error-pages)       |                                                       |                                         |
+|      [Django Admin](#django-admin)      |                                                       |                                         |
 
-| **[Validation Testing](#validation-testing)** |      **[Lighthouse](#lighthouse)**      |
-| :-------------------------------------------: | :-------------------------------------: |
-|               [Python](#python)               |          [Index LH](#index-lh)          |
-|           [JavaScript](#javascript)           |          [About LH](#about-lh)          |
-|                  [CSS](#css)                  |          [Admin LH](#admin-lh)          |
-|                 [HTML](#html)                 |   [Reservations LH](#reservations-lh)   |
-|             [Contrast](#contrast)             |           [Menu LH](#menu-lh)           |
-|                                               |         [Signup LH](#signup-lh)         |
-|                                               |        [Sign in LH](#sign-in-lh)        |
-|                                               | [Change Details LH](#change-details-lh) |
-
-|    **[Setup](#setup)**    |                 **More**                 |
-| :-----------------------: | :--------------------------------------: |
-|   [Database](#database)   |        [Wireframes](#wireframes)         |
-| [Cloudinary](#cloudinary) |           [Credits](#credits)            |
-| [Deployment](#deployment) | [Future Features](#future-feature-ideas) |
+| **[Validation Testing](#validation-testing)** |    **[Setup](#setup)**    |                 **More**                 |
+| :-------------------------------------------: | :-----------------------: | :--------------------------------------: |
+|               [Python](#python)               |   [Database](#database)   |        [Wireframes](#wireframes)         |
+|           [JavaScript](#javascript)           | [Cloudinary](#cloudinary) |           [Credits](#credits)            |
+|                  [CSS](#css)                  | [Deployment](#deployment) | [Future Features](#future-feature-ideas) |
+|                 [HTML](#html)                 |                           |                                          |
+|             [Contrast](#contrast)             |                           |                                          |
 
 ## User Stories
 
