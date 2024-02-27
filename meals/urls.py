@@ -2,7 +2,7 @@
 Contains the url patterns for the meals app.
 '''
 from django.urls import path
-from .views import menu_view, create_or_update_meal, meal_detail
+from .views import menu_view, create_or_update_meal
 
 app_name = 'meals'
 
@@ -14,5 +14,4 @@ urlpatterns = [
         create_or_update_meal,
         name='update_meal'
     ),
-    path('meal-detail/<slug:slug>/', meal_detail, name='meal_detail'),
 ]
