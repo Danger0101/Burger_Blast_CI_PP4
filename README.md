@@ -355,6 +355,13 @@ The site allows users:
 |     Cant book over 20 people in a single reservation     |   Yes   | Added contraint to reduce cancelations |
 |      Booking 20 or less returns value of 20 or less      |   Yes   |                                        |
 |      Booking 21 or more returns value of 20 no more      |   Yes   |                                        |
+|        Admin Action send_reservation_confirmation        |   Yes   |             Email Recieved             |
+|           Admin Action send_reservation_update           |   Yes   |             Email Recieved             |
+|          Admin Action send_cancel_email_to_user          |   Yes   |             Email Recieved             |
+|             Admin Action send_welcome_email              |   Yes   |             Email Recieved             |
+|           Admin Action send_admin_notification           |   Yes   |             Email Recieved             |
+|           Admin Action send_edit_notification            |   Yes   |             Email Recieved             |
+|          Admin Action send_delete_notification           |   Yes   |             Email Recieved             |
 
 ### Automated Testing Scripts
 
