@@ -35,10 +35,8 @@ CLOUDINARY_CONFIG = {
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = DJANGO_SECRET_KEY
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -51,7 +49,6 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "admin_interface",
     "colorfield",
@@ -111,10 +108,14 @@ WSGI_APPLICATION = 'burger_blast.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+# end of local database configuration
+# Left intentionally for future updates
 
+# deployed database configuration
 DATABASES = {
         'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
+# end of deployed database configuration
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -189,6 +190,7 @@ LOGOUT_REDIRECT_URL = 'index'
 # Crispy Forms template pack
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+# Graph Models for data visualization
 GRAPH_MODELS = {
   'all_applications': True,
   'group_models': True,
