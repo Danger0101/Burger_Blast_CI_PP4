@@ -49,6 +49,8 @@ The site allows users:
 
 ## User Stories
 
+- User stories were stored in "Burger Blast User Stories" project of my git hub. I was a little delayed in moving them around to completion so times are a bit off although stucture of sprints were followed throughout development.
+
 ** Sprint One**
 
 - The Basics
