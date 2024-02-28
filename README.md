@@ -290,6 +290,8 @@ The site allows users:
 
 ![Make or edit admin reservations](./staticfiles/images/feature_images/admin/admin_reservation_edit_page.png)
 
+![Action Email Sending](./staticfiles/images/feature_images/admin_reservation_send_emails.png)
+
 **Accounts User**
 
 - Allows admins to view, create accounts, and/or edit account details as needed.
@@ -299,6 +301,8 @@ The site allows users:
 ![Make user accounts](./staticfiles/images/feature_images/admin/admin_user_make_page.png)
 
 ![Edit user accounts](./staticfiles/images/feature_images/admin/admin_user_edit_page.png)
+
+![Action Email Sending](./staticfiles/images/feature_images/admin_user_send_emails.png)
 
 **Accounts Group**
 
