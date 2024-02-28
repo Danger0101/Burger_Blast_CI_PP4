@@ -32,7 +32,7 @@ The site allows users:
 |    [Change Details](#change-details)    |                                                       |         [Signup LH](#signup-lh)         |
 |   [My Reservations](#my-reservations)   |                                                       |        [Sign in LH](#sign-in-lh)        |
 | [Make Reservations](#make-reservations) |                                                       | [Change Details LH](#change-details-lh) |
-| [Edit Reservations](#edit-reservations) |                                                       |                                         |
+| [Edit Reservations](#edit-reservations) |                                                       | [Contact Us LH](#contact-us-details-lh) |
 |              [Menu](#menu)              |                                                       |                                         |
 |       [Contact Use](#contact-us)        |                                                       |                                         |
 |            [Footer](#footer)            |                                                       |                                         |
@@ -553,85 +553,95 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 **Admin Login lighthouse desktop**
 
-![Screencap index.html lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_desktop.png)
+![Screencap admin login lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_desktop.png)
 
 **Admin Login mobile lighthouse**
 
-![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_mobile.png)
+![Screencap admin login lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_signin_lh_mobile.png)
 
-**Admin Pannel lighthouse desktop**
+**Admin site lighthouse desktop**
 
-![Screencap index.html lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_lh_desktop.png)
+![Screencap admin site lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/admin_lh_desktop.png)
 
-**Admin Pannel mobile lighthouse**
+**Admin site mobile lighthouse**
 
-![Screencap index.html lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_lh_mobile.png)
+![Screencap admin site lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/admin_lh_mobile.png)
 
 ### Reservations LH
 
 **Edit Reservation lighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_desktop.png)
+![Screencap edit reservationt lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_desktop.png)
 
 **Edit Reservation mobile lighthouse**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_mobile.png)
+![Screencap edit reservation lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/edit_reservations_lh_mobile.png)
 
 **Make Reservation lighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_desktop.png)
+![Screencap make reservation lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_desktop.png)
 
 **Make Reservation mobile lighthouse**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_mobile.png)
+![Screencap make reservation lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/make_reservations_lh_mobile.png)
 
 **My Reservation lighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_desktop.png)
+![Screencap my reservation lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_desktop.png)
 
 **My Reservation mobile lighthouse**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_mobile.png)
+![Screencap my reservation lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/my_reservations_lh_mobile.png)
 
 ### Menu LH
 
 **Lighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/menu_lh_desktop.png)
+![Screencap menu lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/menu_lh_desktop.png)
 
 **Lighthouse mobile**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/menu_lh_mobile.png)
+![Screencap menu lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/menu_lh_mobile.png)
 
 ### Signup LH
 
 **Lighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signup_lh_desktop.png)
+![Screencap signup lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signup_lh_desktop.png)
 
 **Lighthouse mobile**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signup_lh_mobile.png)
+![Screencap singup lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signup_lh_mobile.png)
 
 ### Sign In LH
 
 **ighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signin_lh_desktop.png)
+![Screencap sign in lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/signin_lh_desktop.png)
 
-**Chrome mobile lighthouse**
+**Lighthouse mobile**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signin_lh_mobile.png)
+![Screencap sign in lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/signin_lh_mobile.png)
 
 ### Change Details LH
 
 **lighthouse desktop**
 
-![Screencap about lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/update_details_lh_desktop.png)
+![Screencap change details lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/update_details_lh_desktop.png)
 
-**Chrome mobile lighthouse**
+**Lighthouse mobile**
 
-![Screencap about lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/update_details_lh_mobile.png)
+![Screencap change details lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/update_details_lh_mobile.png)
+
+### Contact Us Details LH
+
+**lighthouse desktop**
+
+![Screencap contact us lighthouse desktop](./staticfiles/images/burger_blast_lighthouse/contact_lh_desktop.png)
+
+**Lighthouse mobile**
+
+![Screencap contact us lighthouse mobile](./staticfiles/images/burger_blast_lighthouse/contact_lh_mobile.png)
 
 ---
 
@@ -858,11 +868,13 @@ Used Heroku to deploy the website. You can [Visit Live Site by clicking here](ht
 
 ## Future feature ideas
 
-|       Feature Ideas        | Why Not Implimented |
-| :------------------------: | :-----------------: |
-|        Reviews page        |    Nice to have     |
-|     Email verification     |    Nice to have     |
-|   Users Delete accounts    |    Nice to have     |
-|   Reset/Forgot Password    |    Nice to have     |
-| Online Ordering/Deliveries |    Nice to have     |
-|   Better looking emails    |    Nice to have     |
+|              Feature Ideas               |    Why Not Implimented    |
+| :--------------------------------------: | :-----------------------: |
+|               Reviews page               |       Nice to have        |
+|            Email verification            |       Nice to have        |
+|          Users Delete accounts           |       Nice to have        |
+|          Reset/Forgot Password           |       Nice to have        |
+|        Online Ordering/Deliveries        |       Nice to have        |
+|          Better looking emails           |       Nice to have        |
+|  Auto admin site emails upon task save   |       Nice to have        |
+| Link socials to restaurant (if launched) | Needed if real restaurant |
